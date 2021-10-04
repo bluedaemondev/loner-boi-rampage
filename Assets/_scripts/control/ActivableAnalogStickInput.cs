@@ -22,6 +22,6 @@ public class ActivableAnalogStickInput : AnalogStickInput
     {
         base.OnEndDrag(eventData);
         //stickGraphic.enabled = false;
-        backgroundImage.enabled = false;
+        //backgroundImage.enabled = false;
     }
 }
