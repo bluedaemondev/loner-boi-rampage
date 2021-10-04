@@ -40,7 +40,7 @@ public class BloodFactory : MonoBehaviour
     }
 
     //Funcion que va a ser llamada cuando el objeto tenga que ser devuelto al Pool
-    public void ReturnBullet(Blood b)
+    public void ReturnBlood(Blood b)
     {
         pool.ReturnObject(b);
     }

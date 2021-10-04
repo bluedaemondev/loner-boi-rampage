@@ -2299,7 +2299,7 @@ GameObject:
   - component: {fileID: 353994024}
   - component: {fileID: 353994023}
   m_Layer: 5
-  m_Name: Image
+  m_Name: eyebrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13897,7 +13897,7 @@ GameObject:
   - component: {fileID: 2141788958}
   - component: {fileID: 2141788957}
   m_Layer: 5
-  m_Name: Image
+  m_Name: eyebrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

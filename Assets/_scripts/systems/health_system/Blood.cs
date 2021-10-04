@@ -6,10 +6,11 @@ public class Blood : MonoBehaviour
 {
     [SerializeField] ParticleSystem particles;
 
-    //private void OnParticleSystemStopped()
-    //{
-        
-    //}
+    private void OnParticleSystemStopped()
+    {
+        Debug.Log("returning " + this.name);
+        BloodFactory.Instance.ReturnBlood(this);
+    }
 
     private void Reset()
     {
