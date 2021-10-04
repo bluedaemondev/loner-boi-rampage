@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Victim : Entity
 {
+    protected FiniteStateMachine fsm;
+    [SerializeField]
+    protected List<Transform> waypointsToPatrol;
+
     protected override void Awake()
     {
         base.Awake();
-        default_movement = new SeekMovement(m_rigidbody, 5, 5);
+
+        this.fsm = new FiniteStateMachine();
+
+        this.fsm.AddState(VictimEnum.Idle, new IdleState(this.fsm));
+        this.fsm.AddState(VictimEnum.Patrol, new PatrolState(this.fsm, this.transform, this.waypointsToPatrol));
+        this.fsm.AddState(VictimEnum.Fleeing, new FleeState(this.fsm));
+
+        this.fsm.ChangeState(VictimEnum.Idle);
+
+        //default_movement = new SeekMovement(m_rigidbody, 5, 5);
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        default_movement.Move(FindObjectOfType<Player>().transform.position);
+        this.fsm.OnUpdate();
     }
 
 }

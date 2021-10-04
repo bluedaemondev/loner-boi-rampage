@@ -25,6 +25,8 @@ public class SeekMovement : IMovement
     {
         desiredPos = target - m_rigidbody.transform.position;
         desiredPos.Normalize();
+        desiredPos.y = 0;
+
         desiredPos *= speed;
 
 

@@ -41,9 +41,9 @@ public class Health
         return this;
 
     }
-    public Health SetDamagedHandler(Action newHandler)
+    public Health SubscribeDamagedHandler(Action newHandler)
     {
-        this.onDamaged = newHandler;
+        this.onDamaged += newHandler;
         return this;
 
     }
@@ -77,6 +77,9 @@ public class Health
             this.onHealthChanged();
         if (onDamaged != null)
             this.onDamaged();
+        if (this.currentHealth == 0 && this.onDead != null)
+            this.onDead();
+
     }
     public void Heal(float healAmount)
     {

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
-    public float maxDistance;
+    [SerializeField] protected float damage;
 
-    float _currentDistance;
+    [SerializeField]protected float speed;
+    [SerializeField]protected float maxDistance;
 
+    protected float _currentDistance;
 
-    void Update()
+    [SerializeField]protected TrailRenderer trail;
+
+    protected virtual void Update()
     {
         var distanceToTravel = speed * Time.deltaTime;
 
@@ -23,9 +26,24 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        var entity = other.GetComponent<Entity>();
+        
+        if (entity != null)
+        {
+            entity.TakeDamage(damage);
+            var blood = BloodFactory.Instance.pool.GetObject();
+            blood.transform.position = entity.transform.position;
+            
+            BulletFactory.Instance.ReturnBullet(this);
+        }
+    }
+
     private void Reset()
     {
         _currentDistance = 0;
+        trail.Clear();
     }
 
 

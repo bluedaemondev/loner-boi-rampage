@@ -15,8 +15,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetUpLifeBar(Health hRef)
     {
-        this.healthSys = hRef;
-        this.healthSys.SetHealthChangedHandler(this.OnHealthChanged);
+        this.healthSys = hRef.SetHealthChangedHandler(this.OnHealthChanged);
     }
     public void OnHealthChanged()
     {
