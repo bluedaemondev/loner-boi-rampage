@@ -5,7 +5,7 @@ using UnityEngine;
 public class CashPickup : IPickup
 {
     private int amount;
-    private Mesh mesh;
+    //private Mesh mesh;
 
     public CashPickup(int amount)
     {
@@ -13,8 +13,7 @@ public class CashPickup : IPickup
     }
     public void OnGrabPickup()
     {
-        //PointsManager
-        throw new System.NotImplementedException();
+        EventManager.ExecuteEvent(Constants.ON_GET_POINTS, amount);
     }
 
 }
