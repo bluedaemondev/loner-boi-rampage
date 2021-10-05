@@ -62,4 +62,34 @@ public class ObjectPool<T>
         _turnOffCallback(obj); //Lo apago con la logica del objeto
         _currentStock.Add(obj); //Lo guardo nuevamente en la lista
     }
+
+    #region Extension_Methods
+
+    /// <summary>
+    /// Para retornar una lista del pool, usado para generar una cantidad aleatoria de pickups
+    /// </summary>
+    /// <param name="qty">Cantidad de objetos a retornar</param>
+    /// <returns>Lista de T</returns>
+    public List<T> GetObject(int qty)
+    {
+        var result = default(List<T>); //Creo una referencia default del tipo de objeto a devolver
+
+        if (_currentStock.Count > 0 && _currentStock.Count >= qty) //Si tengo stock en mi lista
+        {
+            result = _currentStock.GetRange(0, qty); // Devuelvo desde el primero, la cantidad requerida
+            _currentStock.RemoveRange(0, qty); // Los remuevo de mi lista de objetos listos para usar
+        }
+        else if (_isDynamic) // no alcanzan, pero es dinamico
+        {
+            for (int i = 0; i < qty; i++)
+                result.Add(_factoryMethod()); //Creo y devuelvo ese
+        }
+
+        for (int i = 0; i < qty; i++)
+            _turnOnCallback(result[i]); //Lo prendo con la logica del objeto
+
+        return result;
+    }
+    #endregion
+
 }
