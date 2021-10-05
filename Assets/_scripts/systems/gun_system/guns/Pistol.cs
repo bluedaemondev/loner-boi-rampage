@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pistol : Gun
 {
-    Bullet currBullet;
+    private Bullet currBullet;
 
     protected override void Fire()
     {
