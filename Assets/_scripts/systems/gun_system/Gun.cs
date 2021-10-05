@@ -17,12 +17,16 @@ public abstract class Gun : MonoBehaviour
         if (shotHelper != null)
         {
             gunpointPivot = transform.Find("Gunpoint");
-            
+
             shotHelper.SetGunshotInterval(timeBetweenShots);
             shotHelper.SubscribeToOnShoot(Fire);
         }
     }
 
     protected abstract void Fire();
+    public override string ToString()
+    {
+        return gameObject.name;
+    }
 
 }
