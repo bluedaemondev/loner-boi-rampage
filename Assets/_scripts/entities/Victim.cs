@@ -7,6 +7,8 @@ public class Victim : Entity
     protected FiniteStateMachine fsm;
     [SerializeField]
     protected List<Transform> waypointsToPatrol;
+    [SerializeField]
+    protected int maxPickupsDrop;
 
     protected override void Awake()
     {
@@ -20,11 +22,23 @@ public class Victim : Entity
 
         this.fsm.ChangeState(VictimEnum.Idle);
 
+        this.HealthSystem.SubscribeDeadHandler(this.OnDeadHandler);
         //default_movement = new SeekMovement(m_rigidbody, 5, 5);
     }
-    private void Update()
+    protected virtual void Update()
     {
         this.fsm.OnUpdate();
+    }
+
+    protected virtual void OnDeadHandler()
+    {
+        int amountPicked = Random.Range(1, maxPickupsDrop);
+        var lDrop = DropFactory.Instance.pool.GetObject(amountPicked);
+
+        for (int item = 0; item < amountPicked; item++)
+        {
+            lDrop[item] = lDrop[item].SetPickupStrategy(new CashPickup(100));
+        }
     }
 
 }

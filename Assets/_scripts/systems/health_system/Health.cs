@@ -54,9 +54,9 @@ public class Health
         return this;
 
     }
-    public Health SetDeadHandler(Action newHandler)
+    public Health SubscribeDeadHandler(Action newHandler)
     {
-        this.onDead = newHandler;
+        this.onDead += newHandler;
         return this;
 
     }

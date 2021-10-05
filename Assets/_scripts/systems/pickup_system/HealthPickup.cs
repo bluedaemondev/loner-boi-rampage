@@ -30,7 +30,7 @@ public class HealthPickup : IPickup
         return this;
     }
 
-    public void GrabPickup()
+    public void OnGrabPickup()
     {
         Debug.Log("pickup grab");
         this.onPickupGrabbed?.Invoke();

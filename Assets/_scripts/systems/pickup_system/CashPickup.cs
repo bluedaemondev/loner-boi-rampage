@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CashPickup : MonoBehaviour
+public class CashPickup : IPickup
 {
-    // Start is called before the first frame update
-    void Start()
+    private int amount;
+    private Mesh mesh;
+
+    public CashPickup(int amount)
     {
-        
+        this.amount = amount;
+    }
+    public void OnGrabPickup()
+    {
+        //PointsManager
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

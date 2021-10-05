@@ -6,7 +6,7 @@ public class GunPickup : IPickup
 {
     public Gun gunToGrab;
 
-    public void GrabPickup()
+    public void OnGrabPickup()
     {
         throw new System.NotImplementedException();
     }

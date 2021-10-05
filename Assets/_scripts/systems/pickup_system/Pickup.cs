@@ -13,12 +13,21 @@ public class Pickup : MonoBehaviour
     // Start is called before the first frame update
     void Reset()
     {
-        //pickupStrategy = new HealthPickup()
+        // to do: 
+        // reset animator
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        Debug.Log("Pickup on pickup! PIKA PIKA PIKA");
+        this.pickupStrategy.OnGrabPickup();
+        DropFactory.Instance.pool.ReturnObject(this);
+    }
+
+    public Pickup SetPickupStrategy(IPickup newStrat)
+    {
+        this.pickupStrategy = newStrat;
+        return this;
     }
 
     public static void TurnOn(Pickup b)
