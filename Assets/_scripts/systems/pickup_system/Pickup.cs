@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
     [SerializeField] private Collider m_collider;
     [SerializeField] private Animator m_animator;
+    [SerializeField] private Transform assetContainer;
     //[SerializeField] LayerMask interactionLayers;
 
     [SerializeField] private IPickup pickupStrategy;
@@ -39,6 +40,8 @@ public class Pickup : MonoBehaviour
 
     public static void TurnOff(Pickup b)
     {
+        Destroy(b.assetContainer.GetChild(0).gameObject);
+
         b.gameObject.SetActive(false);
     }
 

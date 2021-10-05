@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct DropType
+{
+    public string type;
+    public GameObject prefab;
+}
+
 public class DropFactory : MonoBehaviour
 {
     public static DropFactory Instance
@@ -14,10 +21,12 @@ public class DropFactory : MonoBehaviour
     static DropFactory _instance;
 
 
-    public Pickup pickupPrefab;
+    public Pickup basePickupPrefab;
     public int pickupStock = 5;
 
     public ObjectPool<Pickup> pool;
+
+    public List<DropType> pickupTypes;
 
 
     void Start()
@@ -36,7 +45,7 @@ public class DropFactory : MonoBehaviour
     //Funcion que contiene la logica de la creacion de la bala
     public Pickup PickupCreator()
     {
-        return Instantiate(pickupPrefab);
+        return Instantiate(basePickupPrefab);
     }
 
     //Funcion que va a ser llamada cuando el objeto tenga que ser devuelto al Pool
