@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+    static GameManager _instance;
 
+    public SoundLibrary GameSounds;
+
+    void Start()
+    {
+        _instance = this;
+    }
 
     #region DEBUGGING
     //Health healthSystemTesting;
     // Start is called before the first frame update
     //void Start()
     //{
-        //healthSystemTesting = FindObjectOfType<Player>().HealthSystem;
+    //healthSystemTesting = FindObjectOfType<Player>().HealthSystem;
     //}
     //public void Damage()
     //{

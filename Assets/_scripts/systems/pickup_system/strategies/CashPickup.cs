@@ -13,6 +13,7 @@ public class CashPickup : IPickup
     public void OnGrabPickup()
     {
         EventManager.ExecuteEvent(Constants.ON_GET_POINTS, amount);
+        SoundManager.instance.PlayEffect("cashpickup");
     }
 
 }

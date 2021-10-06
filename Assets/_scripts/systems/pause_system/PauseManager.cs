@@ -15,14 +15,27 @@ public class PauseManager : MonoBehaviour
 
     private void OnApplicationFocus(bool focus)
     {
-        if (!focus)
+        TogglePause(!focus);
+
+        //if (!focus)
+        //{
+        //    TogglePause(true);
+        //}
+        //else
+        //{
+        //    isPaused = false;
+        //    Time.timeScale = 1;
+        //}
+    }
+    public void TogglePause(bool paused)
+    {
+        isPaused = paused;
+        if (isPaused)
         {
-            isPaused = true;
             Time.timeScale = 0;
         }
         else
         {
-            isPaused = false;
             Time.timeScale = 1;
         }
     }

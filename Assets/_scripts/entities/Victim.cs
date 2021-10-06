@@ -7,7 +7,7 @@ public class Victim : Entity
     protected FiniteStateMachine fsm;
     [SerializeField]
     protected List<Transform> waypointsToPatrol;
-    [SerializeField]
+    [SerializeField, Header("Max cash")]
     protected int maxPickupsDrop;
 
     protected override void Awake()
@@ -32,7 +32,7 @@ public class Victim : Entity
 
     protected virtual void OnDeadHandler()
     {
-        int amountPicked = Random.Range(1, maxPickupsDrop);
+        int amountPicked = Random.Range(1, 4);
         var lDrop = DropFactory.Instance.pool.GetObject(amountPicked);
 
         for (int item = 0; item < amountPicked; item++)

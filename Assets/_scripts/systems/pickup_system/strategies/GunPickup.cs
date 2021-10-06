@@ -13,6 +13,6 @@ public class GunPickup : IPickup
 
     public void OnGrabPickup()
     {
-        throw new System.NotImplementedException();
+        SoundManager.instance.PlayEffect("gunpickup");
     }
 }

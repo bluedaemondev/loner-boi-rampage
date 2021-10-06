@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
 {
     // Juan Lanosa
     public static SoundManager instance { get; private set; }
-    
+
     [Header("0: music | 1: ambient | 2: sound effects"), SerializeField]
     private AudioSource[] sources;
 
@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        if(sources == null)
+        if (sources == null)
         {
             Debug.LogError("Missing audio sources!!");
         }
@@ -39,5 +39,28 @@ public class SoundManager : MonoBehaviour
     public void PlayEffect(AudioClip clip)
     {
         this.sources[2].PlayOneShot(clip);
+    }
+    public void PlayEffect(string clipName)
+    {
+        var cached = SoundLibrary.GetByName(clipName, GameManager.Instance.GameSounds);
+
+        if (cached != default(AudioClip))
+        {
+            if (this.sources[2].isPlaying)
+            {// aca falta una coroutine
+                this.sources[2].clip = cached;
+                this.sources[2].PlayDelayed(this.sources[2].clip.length);
+            }
+            else
+                this.sources[2].PlayOneShot(cached);
+        }
+    }
+    public AudioClip GetEffect(string clipName)
+    {
+        var cached = SoundLibrary.GetByName(clipName, GameManager.Instance.GameSounds);
+
+        if (cached != default(AudioClip))
+            return cached;
+        else return null;
     }
 }

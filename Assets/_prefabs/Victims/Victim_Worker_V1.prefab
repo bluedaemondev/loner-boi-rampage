@@ -765,6 +765,7 @@ MonoBehaviour:
   m_animator: {fileID: 5060264492858585380}
   m_rigidbody: {fileID: 5060264492858585382}
   waypointsToPatrol: []
+  maxPickupsDrop: 100
 --- !u!1 &5060264493028789232
 GameObject:
   m_ObjectHideFlags: 0
