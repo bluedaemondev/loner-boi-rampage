@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 3019835016868351583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.010000005, y: -3.66, z: 1.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.1636, y: 3.1636, z: 3.1636}
   m_Children:
   - {fileID: 3019835018086513646}
   - {fileID: 3019835017863146866}
@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 3019835017863146866}
   - component: {fileID: 3019835017863146865}
   - component: {fileID: 3019835017863146864}
-  - component: {fileID: 3019835017863146867}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -212,19 +211,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3019835017863146867
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019835017863146869}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3019835018086513633
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +222,6 @@ GameObject:
   - component: {fileID: 3019835018086513646}
   - component: {fileID: 3019835018086513645}
   - component: {fileID: 3019835018086513644}
-  - component: {fileID: 3019835018086513647}
   m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
@@ -304,19 +289,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3019835018086513647
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019835018086513633}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3034255046071056179
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +300,6 @@ GameObject:
   - component: {fileID: 7960275703021015285}
   - component: {fileID: 7846926205142743695}
   - component: {fileID: 2795164816405458307}
-  - component: {fileID: 1237387662758591981}
   m_Layer: 0
   m_Name: Corredera
   m_TagString: Untagged
@@ -396,19 +367,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1237387662758591981
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3034255046071056179}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6511420730590058533
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShooterAnalogStickAddon : MonoBehaviour
+public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
 {
     [SerializeField] private AnalogStickInput stick;
     private Vector3 simulatedInputVec;
@@ -29,7 +29,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour
         this.gunShotWaiter = new WaitForSeconds(time);
     }
 
-    void StartFire()
+    public void StartFire()
     {
         if (fireLoopCoroutine == null)
         {
@@ -37,7 +37,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour
         }
     }
 
-    void HaltFire()
+    public void HaltFire()
     {
         if (fireLoopCoroutine != null)
         {
@@ -46,7 +46,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour
         }
     }
 
-    private IEnumerator FireLoop()
+    public IEnumerator FireLoop()
     {
         while (true)
         {

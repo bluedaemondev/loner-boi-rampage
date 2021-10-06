@@ -11,13 +11,10 @@ public class IdleState : IState
     private float timeInState = 5;
     private float currentTime = 0;
 
-
     public IdleState(FiniteStateMachine m_fsm)
     {
         this.fsm = m_fsm;
     }
-
-
 
     public void OnStart()
     {

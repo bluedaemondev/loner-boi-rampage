@@ -7,6 +7,8 @@ public class ToggleObjectOnEvent : MonoBehaviour
     [SerializeField] GameObject objectToToggle;
     [SerializeField] string eventString;
 
+    [SerializeField] string compareStr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,8 @@ public class ToggleObjectOnEvent : MonoBehaviour
     }
     private void ToggleGO(params object[] vs)
     {
-        objectToToggle.SetActive(!objectToToggle.activeSelf);
+        if (string.IsNullOrEmpty(compareStr) || compareStr.Equals(vs[0]))
+            objectToToggle.SetActive(!objectToToggle.activeSelf);
+
     }
 }
