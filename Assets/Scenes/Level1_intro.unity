@@ -17019,7 +17019,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Current weapon
+  m_Text: Pistol
 --- !u!222 &2077460327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17720,7 +17720,7 @@ PrefabInstance:
     - target: {fileID: 1654296762871210615, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8, type: 3}
@@ -17789,12 +17789,12 @@ PrefabInstance:
     - target: {fileID: 1700389919126802218, guid: 89fe1e9330e699c46a7d8391deaac570,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 287
+      value: 286.99994
       objectReference: {fileID: 0}
     - target: {fileID: 1700389919126802218, guid: 89fe1e9330e699c46a7d8391deaac570,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -52.388
+      value: -52.38794
       objectReference: {fileID: 0}
     - target: {fileID: 1700389919126802218, guid: 89fe1e9330e699c46a7d8391deaac570,
         type: 3}
@@ -19175,7 +19175,7 @@ PrefabInstance:
     - target: {fileID: 8212533756869703825, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 112.15
+      value: 112.1499
       objectReference: {fileID: 0}
     - target: {fileID: 8212533756869703825, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}

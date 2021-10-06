@@ -11,6 +11,7 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
+        
         this.default_movement = new StickMovement(this.m_rigidbody);
     }
 

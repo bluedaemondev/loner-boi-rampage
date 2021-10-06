@@ -21,11 +21,11 @@ public class ShootAddon : MonoBehaviour, IGunner
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
         
     }
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         transform.LookAt(transform.position + simulatedInputVec);
     }
@@ -43,7 +43,7 @@ public class ShootAddon : MonoBehaviour, IGunner
         }
     }
 
-    public void HaltFire()
+    public virtual void HaltFire()
     {
         throw new NotImplementedException();
     }
