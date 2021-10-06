@@ -9,5 +9,8 @@ public class Medic : Victim
     {
         var medkit = DropFactory.Instance.pool.GetObject();
         medkit.SetPickupStrategy(new HealthPickup(healPower), PickupType.Health);
+        medkit.transform.position = transform.position;
+
+        Entity.DestroyEntity(this);
     }
 }

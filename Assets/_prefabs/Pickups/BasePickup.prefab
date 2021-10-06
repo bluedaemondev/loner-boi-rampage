@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4279545719909178257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6131904332288215837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AssetContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 6131904332753458751}
   - component: {fileID: 6131904332753458689}
   - component: {fileID: 6131904332753458750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 6131904334064201101}
   - component: {fileID: 6131904334064201098}
   - component: {fileID: 6131904334064201099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BasePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,10 +295,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895602003850285033, guid: a1270c864f2b6074ea71c05b6d69d918,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6113445393498167278, guid: a1270c864f2b6074ea71c05b6d69d918,
         type: 3}
       propertyPath: m_Name
       value: MedkitPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113445393498167278, guid: a1270c864f2b6074ea71c05b6d69d918,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1270c864f2b6074ea71c05b6d69d918, type: 3}
@@ -375,6 +385,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 8607582956597952075, guid: 60fa7675fdbc8f144a6df061d9572695,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607582957017988482, guid: 60fa7675fdbc8f144a6df061d9572695,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607582957592894817, guid: 60fa7675fdbc8f144a6df061d9572695,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607582957816220661, guid: 60fa7675fdbc8f144a6df061d9572695,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fa7675fdbc8f144a6df061d9572695, type: 3}
 --- !u!4 &2480535171731648577 stripped
@@ -390,10 +420,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4279545719909178257}
     m_Modifications:
+    - target: {fileID: 1482808752256847183, guid: adb5637e6032f7f45b068462aca3a7b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482808752343899099, guid: adb5637e6032f7f45b068462aca3a7b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482808752621530540, guid: adb5637e6032f7f45b068462aca3a7b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1482808753272254053, guid: adb5637e6032f7f45b068462aca3a7b0,
         type: 3}
       propertyPath: m_Name
       value: ShotgunPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482808753272254053, guid: adb5637e6032f7f45b068462aca3a7b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1482808753272254054, guid: adb5637e6032f7f45b068462aca3a7b0,
         type: 3}
@@ -449,6 +499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684543784690964233, guid: adb5637e6032f7f45b068462aca3a7b0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adb5637e6032f7f45b068462aca3a7b0, type: 3}
@@ -524,6 +579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DollarBill
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964383425386495789, guid: 45755053b78154b4b8592b698c73de74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45755053b78154b4b8592b698c73de74, type: 3}

@@ -22,4 +22,9 @@ public abstract class Entity : MonoBehaviour
     {
         this.HealthSystem.TakeDamage(damage);
     }
+
+    public static void DestroyEntity(Entity e)
+    {
+        Destroy(e.gameObject);
+    }
 }

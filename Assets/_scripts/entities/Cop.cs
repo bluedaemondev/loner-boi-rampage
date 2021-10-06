@@ -11,5 +11,9 @@ public class Cop : Victim
         base.OnDeadHandler();
         var gun = DropFactory.Instance.pool.GetObject();
         gun.SetPickupStrategy(new GunPickup(gunPrefab.GetComponent<Pistol>()), PickupType.Pistol);
+
+        gun.transform.position = transform.position;
+
+        Entity.DestroyEntity(this);
     }
 }
