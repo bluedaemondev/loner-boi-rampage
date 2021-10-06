@@ -10,6 +10,11 @@ public class EventManager
     //Diccionario donde voy a guardar cada evento al que se hayan registrado las funciones
     static Dictionary<string, EventReceiver> _events;
 
+    public static void ResetEvents()
+    {
+        _events = new Dictionary<string, EventReceiver>();
+    }
+
     public static void SubscribeToEvent(string eventType, EventReceiver listener)
     {
         if (_events == null) //Si el diccionario no existe

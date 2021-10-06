@@ -22,7 +22,7 @@ public class HealthPickup : IPickup
 
     public void OnGrabPickup()
     {
-        Debug.Log(string.Format($"hp {0} pickup grab", this.healthToRecover));
+        Debug.Log(string.Format("hp {0} pickup grab", this.healthToRecover));
         this.onPickupGrabbed?.Invoke(this.healthToRecover);
         SoundManager.instance.PlayEffect("healthpickup");
     }

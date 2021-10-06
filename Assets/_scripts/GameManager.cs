@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     public SoundLibrary GameSounds;
 
+    private void Awake()
+    {
+        EventManager.ResetEvents();
+        Victim.TOTAL_VICTIMS = 1;
+    }
     void Start()
     {
         _instance = this;

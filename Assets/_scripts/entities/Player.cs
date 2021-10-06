@@ -11,13 +11,15 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
-        
+
         this.default_movement = new StickMovement(this.m_rigidbody);
     }
 
     private void Start()
     {
-        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, System.Enum.GetName(typeof(PickupType), defaultGun));
+        var tmp = System.Enum.GetName(typeof(PickupType), defaultGun);
+        Debug.Log("tmp = " + tmp);
+        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, tmp);
     }
 
     private void FixedUpdate()

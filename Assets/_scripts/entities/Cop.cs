@@ -29,7 +29,7 @@ public class Cop : Victim
         var gun = DropFactory.Instance.pool.GetObject();
         gun.SetPickupStrategy(new GunPickup(gunscript), gunType);
 
-        gun.transform.position = transform.position;
+        gun.transform.position = transform.position + Vector3.right;
 
         Entity.DestroyEntity(this);
     }

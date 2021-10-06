@@ -43,7 +43,7 @@ public class AnalogStickInput : MonoBehaviour, IDragHandler, IBeginDragHandler, 
 
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("began drag");
+        //Debug.Log("began drag");
     }
 
     public virtual void OnDrag(PointerEventData eventData)

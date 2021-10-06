@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Victim : Entity
 {
+    public static int TOTAL_VICTIMS = 0;
+
     protected FiniteStateMachine fsm;
     [SerializeField]
     protected List<Transform> waypointsToPatrol;
@@ -25,6 +27,12 @@ public class Victim : Entity
         this.HealthSystem.SubscribeDeadHandler(this.OnDeadHandler);
         //default_movement = new SeekMovement(m_rigidbody, 5, 5);
     }
+    protected virtual void Start()
+    {
+        TOTAL_VICTIMS++;
+        Debug.Log(this.gameObject.name);
+    }
+
     protected virtual void Update()
     {
         this.fsm.OnUpdate();
@@ -32,6 +40,7 @@ public class Victim : Entity
 
     protected virtual void OnDeadHandler()
     {
+
         int amountPicked = Random.Range(1, 4);
         var lDrop = DropFactory.Instance.pool.GetObject(amountPicked);
 

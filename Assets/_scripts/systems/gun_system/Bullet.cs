@@ -38,11 +38,9 @@ public class Bullet : MonoBehaviour
 
             BulletFactory.Instance.ReturnBullet(this);
         }
-        Debug.Log("trigEnt");
     }
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collEnt");
         BulletFactory.Instance.ReturnBullet(this);
 
     }

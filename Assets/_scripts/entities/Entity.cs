@@ -25,6 +25,15 @@ public abstract class Entity : MonoBehaviour
 
     public static void DestroyEntity(Entity e)
     {
+        if (e is Victim) { 
+            Victim.TOTAL_VICTIMS--;
+            Debug.Log(Victim.TOTAL_VICTIMS);
+
+            if(Victim.TOTAL_VICTIMS == 0)
+            {
+                EventManager.ExecuteEvent(Constants.ON_PLAYER_CLEARED_FLOOR);
+            }
+        }
         Destroy(e.gameObject);
     }
 }

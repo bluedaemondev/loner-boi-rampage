@@ -18,7 +18,7 @@ public class IdleState : IState
 
     public void OnStart()
     {
-        Debug.Log("Entre en idle");
+        //Debug.Log("Entre en idle");
     }
 
     public void OnUpdate()
