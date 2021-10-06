@@ -5,7 +5,6 @@ using UnityEngine;
 public class CashPickup : IPickup
 {
     private int amount;
-    //private Mesh mesh;
 
     public CashPickup(int amount)
     {

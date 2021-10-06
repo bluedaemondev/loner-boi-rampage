@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class GunPickup : IPickup
 {
-    public Gun gunToGrab;
+    private Gun gunToGrab;
+
+    public GunPickup(Gun prefabRef)
+    {
+        this.gunToGrab = prefabRef;
+    }
 
     public void OnGrabPickup()
     {

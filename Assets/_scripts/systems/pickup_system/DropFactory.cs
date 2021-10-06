@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct DropType
-{
-    public string type;
-    public GameObject prefab;
-}
-
 public class DropFactory : MonoBehaviour
 {
     public static DropFactory Instance
@@ -26,7 +19,7 @@ public class DropFactory : MonoBehaviour
 
     public ObjectPool<Pickup> pool;
 
-    public List<DropType> pickupTypes;
+    
 
 
     void Start()

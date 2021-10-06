@@ -37,7 +37,7 @@ public class Victim : Entity
 
         for (int item = 0; item < amountPicked; item++)
         {
-            lDrop[item] = lDrop[item].SetPickupStrategy(new CashPickup(100));
+            lDrop[item] = lDrop[item].SetPickupStrategy(new CashPickup(Random.Range(maxPickupsDrop / 3, maxPickupsDrop + 1)), PickupType.Cash);
         }
     }
 

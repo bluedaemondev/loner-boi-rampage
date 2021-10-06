@@ -6,10 +6,10 @@ public class Pickup : MonoBehaviour
 {
     [SerializeField] private Collider m_collider;
     [SerializeField] private Animator m_animator;
-    [SerializeField] private Transform assetContainer;
-    //[SerializeField] LayerMask interactionLayers;
 
-    [SerializeField] private IPickup pickupStrategy;
+    [SerializeField] private List<PickupWTransform> assetPrefabs;
+
+    private IPickup pickupStrategy;
 
     // Start is called before the first frame update
     void Reset()
@@ -26,9 +26,17 @@ public class Pickup : MonoBehaviour
         DropFactory.Instance.pool.ReturnObject(this);
     }
 
-    public Pickup SetPickupStrategy(IPickup newStrat)
+    public Pickup SetPickupStrategy(IPickup newStrat, PickupType type)
     {
         this.pickupStrategy = newStrat;
+        bool comp = false;
+
+        for (int i = 0; i < this.assetPrefabs.Count; i++)
+        {
+            comp = i == (int)type; //test
+            assetPrefabs[i].transform.gameObject.SetActive(comp);
+        }
+
         return this;
     }
 
@@ -40,8 +48,6 @@ public class Pickup : MonoBehaviour
 
     public static void TurnOff(Pickup b)
     {
-        Destroy(b.assetContainer.GetChild(0).gameObject);
-
         b.gameObject.SetActive(false);
     }
 
