@@ -14,5 +14,6 @@ public class GunPickup : IPickup
     public void OnGrabPickup()
     {
         SoundManager.instance.PlayEffect("gunpickup");
+        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, gunToGrab.name);
     }
 }
