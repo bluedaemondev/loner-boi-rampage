@@ -27,10 +27,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.3831
       objectReference: {fileID: 0}
+    - target: {fileID: 5446238902372947281, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8204088940057145459, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
         type: 3}
       propertyPath: m_Name
-      value: Victim_Worker_V3
+      value: Victim_Worker_V3 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8204088940057145465, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
         type: 3}
