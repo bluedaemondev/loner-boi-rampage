@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 
 //Simply re-styles a gameObject name in the Hiearchy window to be black and all caps.
@@ -23,3 +24,4 @@ public static class HierarchySectionHeader
         }
     }
 }
+#endif

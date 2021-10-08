@@ -15,10 +15,14 @@ public class GameManager : MonoBehaviour
 
     public SoundLibrary GameSounds;
 
+    public Camera mainCamera;
+
     private void Awake()
     {
         EventManager.ResetEvents();
         Victim.TOTAL_VICTIMS = 1;
+
+        mainCamera = Camera.main;
     }
     void Start()
     {

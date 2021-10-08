@@ -36,14 +36,14 @@ public class Bullet : MonoBehaviour
             var blood = BloodFactory.Instance.pool.GetObject();
             blood.transform.position = entity.transform.position;
 
-            BulletFactory.Instance.ReturnBullet(this);
         }
-    }
-    protected virtual void OnCollisionEnter(Collision collision)
-    {
         BulletFactory.Instance.ReturnBullet(this);
-
     }
+    //protected virtual void OnCollisionEnter(Collision collision)
+    //{
+    //    BulletFactory.Instance.ReturnBullet(this);
+
+    //}
 
     private void Reset()
     {
