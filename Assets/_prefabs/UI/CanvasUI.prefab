@@ -1706,16 +1706,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 5917354974639468158, guid: dbd93412a5da09041929ee7bbf87cfec,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5917354974639468158, guid: dbd93412a5da09041929ee7bbf87cfec,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd93412a5da09041929ee7bbf87cfec, type: 3}
 --- !u!224 &4806095253162944983 stripped

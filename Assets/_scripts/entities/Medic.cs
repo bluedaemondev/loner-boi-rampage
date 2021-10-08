@@ -5,6 +5,12 @@ using UnityEngine;
 public class Medic : Victim
 {
     [SerializeField] float healPower;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        this.fsm.ChangeState(VictimEnum.Idle);
+    }
     protected override void OnDeadHandler()
     {
         var medkit = DropFactory.Instance.pool.GetObject();

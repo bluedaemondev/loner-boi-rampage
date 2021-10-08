@@ -673,10 +673,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5060264492858585377}
-  - component: {fileID: 5060264492858585382}
   - component: {fileID: 5060264492858585381}
   - component: {fileID: 5060264492858585380}
   - component: {fileID: 5060264492858585383}
+  - component: {fileID: 1851960315}
   m_Layer: 0
   m_Name: Victim_Worker_V1
   m_TagString: Untagged
@@ -700,22 +700,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &5060264492858585382
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5060264492858585387}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!136 &5060264492858585381
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -763,9 +747,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_bar: {fileID: 5060264492698975392}
   m_animator: {fileID: 5060264492858585380}
-  m_rigidbody: {fileID: 5060264492858585382}
-  waypointsToPatrol: []
+  waypointsToPatrol:
+  - {fileID: 0}
+  - {fileID: 0}
   maxPickupsDrop: 100
+  m_agent: {fileID: 1851960315}
+--- !u!195 &1851960315
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060264492858585387}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.92
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1.52
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &5060264493028789232
 GameObject:
   m_ObjectHideFlags: 0

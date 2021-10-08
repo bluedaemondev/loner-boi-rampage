@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         EventManager.ResetEvents();
-        Victim.TOTAL_VICTIMS = 1;
+        Victim.TOTAL_VICTIMS = 0;
 
         mainCamera = Camera.main;
     }
