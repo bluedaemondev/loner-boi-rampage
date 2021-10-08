@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    [SerializeField] private float speed = 5;
     [SerializeField] private AnalogStickInput movementInput;
     [Header("Elegir solo armas")]
     [SerializeField] private PickupType defaultGun;
 
+    [SerializeField] private Rigidbody m_rigidbody;
+
+
     protected override void Awake()
     {
         base.Awake();
-
-        this.default_movement = new StickMovement(this.m_rigidbody);
+        this.default_movement = new StickMovement(this.m_rigidbody, movementInput, speed);
     }
 
     private void Start()
     {
         var tmp = System.Enum.GetName(typeof(PickupType), defaultGun);
-        Debug.Log("tmp = " + tmp);
         EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, tmp);
     }
 
     private void FixedUpdate()
     {
-        default_movement.Move(movementInput.Value);
+        default_movement.Move();
     }
 
 

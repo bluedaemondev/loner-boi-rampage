@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IMovement
 {
-    void Move(Vector3 target);
+    void Move();
+    void SubscribeToEndCoroutine(System.Action handler);
 }

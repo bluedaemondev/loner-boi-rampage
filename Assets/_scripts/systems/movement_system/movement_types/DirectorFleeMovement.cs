@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FleeMovement : MonoBehaviour
+public class DirectorFleeMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

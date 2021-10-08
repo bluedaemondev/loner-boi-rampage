@@ -11,11 +11,14 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    static GameManager _instance;
 
+    static GameManager _instance;
+    
     public SoundLibrary GameSounds;
 
     public Camera mainCamera;
+
+    public Transform player;
 
     private void Awake()
     {

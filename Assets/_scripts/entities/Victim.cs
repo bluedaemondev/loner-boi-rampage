@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using System.Linq;
 
 public class Victim : Entity
 {
     public static int TOTAL_VICTIMS = 0;
 
     protected FiniteStateMachine fsm;
-    [SerializeField]
+    [SerializeField, InspectorName("Nodes to reach")]
     protected List<Transform> waypointsToPatrol;
     [SerializeField, Header("Max cash")]
     protected int maxPickupsDrop;
 
+    [SerializeField]
+    protected NavMeshAgent m_agent;
     protected override void Awake()
     {
         base.Awake();
@@ -19,10 +23,11 @@ public class Victim : Entity
         this.fsm = new FiniteStateMachine();
 
         this.fsm.AddState(VictimEnum.Idle, new IdleState(this.fsm));
-        this.fsm.AddState(VictimEnum.Patrol, new PatrolState(this.fsm, this.transform, this.waypointsToPatrol));
-        this.fsm.AddState(VictimEnum.Fleeing, new FleeState(this.fsm));
+        this.fsm.AddState(VictimEnum.Patrol, new PatrolState(this.fsm, new NavMeshWaypointMovement(this.m_agent, this.waypointsToPatrol.Select(wp => wp.position).ToList())));
+        //this.fsm.AddState(VictimEnum.Fleeing, new FleeState(this.fsm));
+        this.fsm.AddState(VictimEnum.Chasing, new SeekState(this.fsm, new NavMeshSeekMovement(m_agent, FindObjectOfType<Player>().transform, true)));
 
-        this.fsm.ChangeState(VictimEnum.Idle);
+        this.fsm.ChangeState(VictimEnum.Patrol);
 
         this.HealthSystem.SubscribeDeadHandler(this.OnDeadHandler);
         //default_movement = new SeekMovement(m_rigidbody, 5, 5);
@@ -52,5 +57,7 @@ public class Victim : Entity
 
         Entity.DestroyEntity(this);
     }
+
+
 
 }
