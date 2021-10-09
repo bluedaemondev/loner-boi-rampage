@@ -17,6 +17,7 @@ public class ElevatorDoor : MonoBehaviour
         EventManager.SubscribeToEvent(Constants.ON_PLAYER_LEFT_ELEVATOR, this.CloseDoor);
 
         m_animator.SetTrigger(startLevelTrigger);
+        OpenDoor();
     }
 
     private void OpenDoor(params object[] vs)
