@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
+    public static Entity Player;
+
     public Health HealthSystem;
 
     [SerializeField] protected HealthBar health_bar;

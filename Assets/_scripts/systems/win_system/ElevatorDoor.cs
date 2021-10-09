@@ -20,17 +20,25 @@ public class ElevatorDoor : MonoBehaviour
         OpenDoor();
     }
 
+    #region ANIMATION_METHODS
+    public void PlayDoorSoundFXOpen()
+    {
+        if (openDoorClip != null)
+            SoundManager.instance.PlayAmbient(openDoorClip);
+    }
+    public void PlayDoorSoundFXClose()
+    {
+        if (closeDoorClip != null)
+            SoundManager.instance.PlayMusic(closeDoorClip);
+    }
+    #endregion
+
     private void OpenDoor(params object[] vs)
     {
         this.m_animator.SetBool("isClosed", false);
-        if (openDoorClip != null)
-            SoundManager.instance.PlayAmbient(openDoorClip);
     }
     private void CloseDoor(params object[] vs)
     {
         this.m_animator.SetBool("isClosed", true);
-
-        if (closeDoorClip != null)
-            SoundManager.instance.PlayMusic(closeDoorClip);
     }
 }
