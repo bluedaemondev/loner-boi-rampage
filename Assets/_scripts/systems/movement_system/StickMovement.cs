@@ -12,6 +12,8 @@ public class StickMovement : IMovement
 
     private Vector3 direction;
 
+    private Action<float> onMovementHandler;
+
     #endregion
 
     #region CONSTRUCTOR
@@ -32,11 +34,18 @@ public class StickMovement : IMovement
 
         // hago el movimiento correspondiente con fixed update
         this.m_rigidbody.MovePosition(m_rigidbody.transform.position + direction * speed * Time.fixedDeltaTime);
+
+        this.onMovementHandler(direction.magnitude);
+
     }
 
     public void SubscribeToEndCoroutine(Action handler)
     {
         Debug.Log("Shouldn't use this");
+    }
+    public void SubscribeOnMoveHandler(Action<float> newHandler)
+    {
+        onMovementHandler += newHandler;
     }
     #endregion
 }

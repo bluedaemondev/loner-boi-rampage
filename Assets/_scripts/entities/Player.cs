@@ -17,6 +17,12 @@ public class Player : Entity
         Player = this;
         base.Awake();
         this.default_movement = new StickMovement(this.m_rigidbody, movementInput, speed);
+
+        this.HealthSystem.SubscribeDamagedHandler(PlayDamagedAnimation);
+        this.HealthSystem.SubscribeDeadHandler(PlayDeadAnimation);
+
+        ((StickMovement)this.default_movement).SubscribeOnMoveHandler(MoveAnimationHandler);
+
     }
 
     private void Start()
@@ -28,6 +34,19 @@ public class Player : Entity
     private void FixedUpdate()
     {
         default_movement.Move();
+    }
+
+    private void MoveAnimationHandler(float magnitudeOfMovement)
+    {
+        Debug.Log(string.Format("mag {0}", magnitudeOfMovement));
+        if (magnitudeOfMovement > 0)
+        {
+            m_animator.SetBool("iswalking", true);
+        }
+        else
+        {
+            m_animator.SetBool("iswalking", false);
+        }
     }
 
 
