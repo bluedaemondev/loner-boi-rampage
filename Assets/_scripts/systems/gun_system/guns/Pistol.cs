@@ -6,7 +6,7 @@ public class Pistol : Gun
 {
     private Bullet currBullet;
 
-    protected override void Fire()
+    public override void Fire()
     {
         currBullet = BulletFactory.Instance.pool.GetObject();
 

@@ -25,7 +25,7 @@ public class Victim : Entity
         this.fsm.AddState(VictimEnum.Idle, new IdleState(this.fsm));
         this.fsm.AddState(VictimEnum.Patrol, new PatrolState(this.fsm, new NavMeshWaypointMovement(this.m_agent, this.waypointsToPatrol.Select(wp => wp.position).ToList())));
         //this.fsm.AddState(VictimEnum.Fleeing, new FleeState(this.fsm));
-        this.fsm.AddState(VictimEnum.Chasing, new SeekState(this.fsm, new NavMeshSeekMovement(m_agent, Player.transform, false)));
+        this.fsm.AddState(VictimEnum.Chasing, new SeekState(this.fsm, new NavMeshSeekMovement(m_agent, Player != null ? Player.transform : FindObjectOfType<Player>().transform, false)));
 
         this.fsm.ChangeState(VictimEnum.Patrol);
 
@@ -35,7 +35,7 @@ public class Victim : Entity
     protected virtual void Start()
     {
         TOTAL_VICTIMS++;
-        Debug.Log(this.gameObject.name);
+        //Debug.Log(this.gameObject.name);
     }
 
     protected virtual void Update()

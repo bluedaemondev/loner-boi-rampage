@@ -11,16 +11,26 @@ public class Cop : Victim
     protected Gun gunscript;
 
     [SerializeField]
-    protected IGunner shootingAddon;
+    protected ShootAddon shootingAddon;
+
 
     protected override void Awake()
     {
         base.Awake();
-
-        this.fsm.AddState(VictimEnum.Aiming, new AimingState());
-        this.fsm.AddState(VictimEnum.Shooting, new ShootingState());
+        if(!shootingAddon)
+            shootingAddon = GetComponent<ShootAddon>();
 
         this.gunscript = gunPrefab.GetComponent<Gun>();
+        gunscript.shotHelper = this.shootingAddon;
+
+
+        this.fsm.AddState(VictimEnum.Aiming, new AimingState());
+        this.fsm.AddState(VictimEnum.Shooting, new ShootingState(fsm, shootingAddon, gunscript));
+
+
+        this.fsm.ChangeState(VictimEnum.Shooting);
+
+        
     }
 
     protected override void OnDeadHandler()

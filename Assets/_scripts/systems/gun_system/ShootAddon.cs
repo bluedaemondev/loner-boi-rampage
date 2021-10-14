@@ -5,29 +5,28 @@ using UnityEngine;
 
 public class ShootAddon : MonoBehaviour, IGunner
 {
-    [SerializeField] private AnalogStickInput stick;
-    private Vector3 simulatedInputVec;
+    [SerializeField] private Transform aimTarget;
     private Coroutine fireLoopCoroutine;
 
-    private float gunShotInterval;
+    //private float gunShotInterval;
     private YieldInstruction gunShotWaiter;
 
     private Action onShootEvent;
 
+    [SerializeField]
+    private Gun gunInHand;
+
     // Start is called before the first frame update
     protected void Awake()
     {
-        
+        gunShotWaiter = new WaitForSeconds(gunInHand.TimeBetweenShots);
+        StartFire();
     }
 
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        
-    }
     protected virtual void FixedUpdate()
     {
-        transform.LookAt(transform.position + simulatedInputVec);
+        transform.LookAt(aimTarget/*transform.position + simulatedInputVec*/);
+
     }
     public void SubscribeToOnShoot(Action method)
     {
@@ -45,17 +44,19 @@ public class ShootAddon : MonoBehaviour, IGunner
 
     public virtual void HaltFire()
     {
-        throw new NotImplementedException();
-    }
-
-    public void SetGunshotInterval(float time)
-    {
-        throw new NotImplementedException();
+        if (fireLoopCoroutine != null)
+        {
+            StopCoroutine(fireLoopCoroutine);
+            fireLoopCoroutine = null;
+        }
     }
 
     public void StartFire()
     {
-        throw new NotImplementedException();
+        if (fireLoopCoroutine == null)
+        {
+            fireLoopCoroutine = StartCoroutine(FireLoop());
+        }
     }
 
     

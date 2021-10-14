@@ -16,12 +16,19 @@ public class Player : Entity
     {
         Player = this;
         base.Awake();
+#if UNITY_ANDROID
         this.default_movement = new StickMovement(this.m_rigidbody, movementInput, speed);
+        ((StickMovement)this.default_movement).SubscribeOnMoveHandler(MoveAnimationHandler);
+#endif
 
+#if UNITY_EDITOR || UNITY_STANDALONE
+        this.default_movement = new KeyboardMovement(this.m_rigidbody, speed);
+        ((KeyboardMovement)this.default_movement).SubscribeOnMoveHandler(MoveAnimationHandler);
+
+#endif
         this.HealthSystem.SubscribeDamagedHandler(PlayDamagedAnimation);
         this.HealthSystem.SubscribeDeadHandler(PlayDeadAnimation);
 
-        ((StickMovement)this.default_movement).SubscribeOnMoveHandler(MoveAnimationHandler);
 
     }
 
@@ -38,7 +45,7 @@ public class Player : Entity
 
     private void MoveAnimationHandler(float magnitudeOfMovement)
     {
-        Debug.Log(string.Format("mag {0}", magnitudeOfMovement));
+        //Debug.Log(string.Format("mag {0}", magnitudeOfMovement));
         if (magnitudeOfMovement > 0)
         {
             m_animator.SetBool("iswalking", true);

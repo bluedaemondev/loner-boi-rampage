@@ -8,7 +8,7 @@ public class Shotgun : Gun
     private List<Transform> aditionalGunpoints;
     private List<Bullet> currentBullets;
 
-    protected override void Fire()
+    public override void Fire()
     {
         currentBullets = BulletFactory.Instance.pool.GetObject(aditionalGunpoints.Count);
         int selectedGP = 0;

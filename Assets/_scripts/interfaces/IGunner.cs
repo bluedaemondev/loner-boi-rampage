@@ -7,7 +7,7 @@ using System.Collections;
 public interface IGunner
 {
     void SubscribeToOnShoot(Action method);
-    void SetGunshotInterval(float time);
+    //void SetGunshotInterval(float time);
     void StartFire();
     void HaltFire();
     IEnumerator FireLoop();

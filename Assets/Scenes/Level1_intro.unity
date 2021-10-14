@@ -13087,10 +13087,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 304587690, guid: d91b7d8dc6dec414296e0ce4c175848a, type: 3}
+      propertyPath: aimTarget
+      value: 
+      objectReference: {fileID: 752402852}
     - target: {fileID: 1900877457954718997, guid: d91b7d8dc6dec414296e0ce4c175848a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 1900877457954718997, guid: d91b7d8dc6dec414296e0ce4c175848a,
         type: 3}
@@ -13144,83 +13148,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1900877457954719006, guid: d91b7d8dc6dec414296e0ce4c175848a,
         type: 3}
-      propertyPath: maxPickupsDrop
-      value: 30
-      objectReference: {fileID: 0}
+      propertyPath: waypointsToPatrol.Array.data[0]
+      value: 
+      objectReference: {fileID: 735150329}
+    - target: {fileID: 1900877457954719006, guid: d91b7d8dc6dec414296e0ce4c175848a,
+        type: 3}
+      propertyPath: waypointsToPatrol.Array.data[1]
+      value: 
+      objectReference: {fileID: 973916259}
+    - target: {fileID: 1900877457954719006, guid: d91b7d8dc6dec414296e0ce4c175848a,
+        type: 3}
+      propertyPath: waypointsToPatrol.Array.data[2]
+      value: 
+      objectReference: {fileID: 1337907494}
     - target: {fileID: 1900877457954719007, guid: d91b7d8dc6dec414296e0ce4c175848a,
         type: 3}
       propertyPath: m_Name
       value: Victim_Cop
       objectReference: {fileID: 0}
-    - target: {fileID: 1900877457954719007, guid: d91b7d8dc6dec414296e0ce4c175848a,
+    - target: {fileID: 7554547819670728054, guid: d91b7d8dc6dec414296e0ce4c175848a,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458229017722, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458243796934, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458396074349, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458581893110, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458724162543, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458756590514, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877458959076143, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877459214151771, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1900877459781649139, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8626412897962006740, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088856767285789296, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088856767561823241, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088856767642542741, guid: d91b7d8dc6dec414296e0ce4c175848a,
-        type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
+      propertyPath: timeBetweenShots
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91b7d8dc6dec414296e0ce4c175848a, type: 3}

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1900877457954718993}
   - component: {fileID: 1900877457954718992}
   - component: {fileID: 1900877457954719006}
+  - component: {fileID: 304587690}
+  - component: {fileID: 304587696}
   m_Layer: 0
   m_Name: Victim_Cop
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900877457954719007}
-  m_LocalRotation: {x: -0, y: -0.70709425, z: -0, w: 0.7071194}
+  m_LocalRotation: {x: 0, y: -0.7070945, z: 0, w: 0.70711905}
   m_LocalPosition: {x: -5.62, y: -3.458, z: -12.510161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -99,12 +101,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_bar: {fileID: 1900877457778788500}
   m_animator: {fileID: 1900877457954718992}
-  m_rigidbody: {fileID: 1900877457954718994}
-  waypointsToPatrol: []
-  maxPickupsDrop: 1
-  gunPrefab: {fileID: 1654296762871210615, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8,
-    type: 3}
+  waypointsToPatrol:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  maxPickupsDrop: 30
+  m_agent: {fileID: 304587696}
+  gunPrefab: {fileID: 9088856766623564218}
   gunType: 2
+  shootingAddon: {fileID: 304587690}
+--- !u!114 &304587690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900877457954719007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d9de9d37eb6634d86ae6bf66800094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimTarget: {fileID: 0}
+  gunInHand: {fileID: 7554547819670728054}
+--- !u!195 &304587696
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900877457954719007}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2.65
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1.41
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1900877458229017720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,9 +1137,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8, type: 3}
+--- !u!1 &9088856766623564218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654296762871210615, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7554547818443350989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9088856766623564217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1654296762871210612, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8,
     type: 3}
   m_PrefabInstance: {fileID: 7554547818443350989}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7554547819670728054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1260932795, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7554547818443350989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9088856766623564218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825c4fbdf7ac08c40a49b9eaec69c396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,25 +5,26 @@ using UnityEngine;
 public abstract class Gun : MonoBehaviour
 {
     // crear clase base para reciclar el addon de disparo en enemigos y player
-    [SerializeField] protected ShooterAnalogStickAddon shotHelper;
+    [SerializeField] public IGunner shotHelper;
 
-    [SerializeField] protected float timeBetweenShots;
+    [SerializeField] private float timeBetweenShots;
     [SerializeField] protected AudioClip shootSound;
 
     protected Transform gunpointPivot;
 
-    protected void OnEnable()
+    public float TimeBetweenShots { get => timeBetweenShots; }
+
+    protected void Start()
     {
         if (shotHelper != null)
         {
             gunpointPivot = transform.Find("Gunpoint");
-
-            shotHelper.SetGunshotInterval(timeBetweenShots);
-            shotHelper.SubscribeToOnShoot(Fire);
+            //shotHelper.SetGunshotInterval(timeBetweenShots);
+            // .sethelper
         }
     }
 
-    protected abstract void Fire();
+    public abstract void Fire();
     public override string ToString()
     {
         return gameObject.name;
