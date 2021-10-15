@@ -6,16 +6,20 @@ public class Player : Entity
 {
     [SerializeField] private float speed = 5;
     [SerializeField] private AnalogStickInput movementInput;
+    
     [Header("Elegir solo armas")]
     [SerializeField] private PickupType defaultGun;
 
     [SerializeField] private Rigidbody m_rigidbody;
+
+    [SerializeField] private Gun selectedGun;
 
 
     protected override void Awake()
     {
         Player = this;
         base.Awake();
+
 #if UNITY_ANDROID
         this.default_movement = new StickMovement(this.m_rigidbody, movementInput, speed);
         ((StickMovement)this.default_movement).SubscribeOnMoveHandler(MoveAnimationHandler);
@@ -29,13 +33,15 @@ public class Player : Entity
         this.HealthSystem.SubscribeDamagedHandler(PlayDamagedAnimation);
         this.HealthSystem.SubscribeDeadHandler(PlayDeadAnimation);
 
+        this.selectedGun.shotHelper = this.GetComponent<ShooterAnalogStickAddon>();
+        this.selectedGun.shotHelper.SubscribeToOnShoot(Shoot);
 
     }
 
     private void Start()
     {
-        var tmp = System.Enum.GetName(typeof(PickupType), defaultGun);
-        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, tmp);
+        //var tmp = System.Enum.GetName(typeof(PickupType), defaultGun);
+        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, selectedGun.name);
     }
 
     private void FixedUpdate()
@@ -55,6 +61,12 @@ public class Player : Entity
             m_animator.SetBool("iswalking", false);
         }
     }
-
-
+    private void Shoot()
+    {
+        m_animator.Play("shooting");
+    }
+    private void Damaged()
+    {
+        m_animator.SetTrigger("damaged");
+    }
 }

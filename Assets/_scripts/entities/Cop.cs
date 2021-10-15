@@ -13,10 +13,14 @@ public class Cop : Victim
     [SerializeField]
     protected ShootAddon shootingAddon;
 
+    [SerializeField]
+    protected VictimEnum currentState = VictimEnum.Patrol;
+
 
     protected override void Awake()
     {
         base.Awake();
+
         if(!shootingAddon)
             shootingAddon = GetComponent<ShootAddon>();
 
@@ -28,7 +32,7 @@ public class Cop : Victim
         this.fsm.AddState(VictimEnum.Shooting, new ShootingState(fsm, shootingAddon, gunscript));
 
 
-        this.fsm.ChangeState(VictimEnum.Shooting);
+        this.fsm.ChangeState(currentState);
 
         
     }

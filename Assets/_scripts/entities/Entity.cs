@@ -26,12 +26,11 @@ public abstract class Entity : MonoBehaviour
 
     public static void DestroyEntity(Entity e)
     {
-        //if (e is Victim) { 
+        GameManager.TOTAL_VICTIMS--;
 
-        Victim.TOTAL_VICTIMS--;
-        Debug.Log(Victim.TOTAL_VICTIMS);
+        Debug.Log(GameManager.TOTAL_VICTIMS);
 
-        if (Victim.TOTAL_VICTIMS == 0)
+        if (GameManager.TOTAL_VICTIMS == 0)
         {
             EventManager.ExecuteEvent(Constants.ON_PLAYER_CLEARED_FLOOR);
         }
@@ -39,6 +38,7 @@ public abstract class Entity : MonoBehaviour
         //}
         Destroy(e.gameObject);
     }
+
     protected void ToggleAnimatorBool(string toChange)
     {
         if (m_animator != null)
@@ -59,7 +59,14 @@ public abstract class Entity : MonoBehaviour
     protected void PlayDeadAnimation()
     {
         ToggleAnimatorTrigger("died");
+        StartCoroutine(EnableTargetInTime(3f));
     }
 
+    IEnumerator EnableTargetInTime(float t)
+    {
+        yield return new WaitForSeconds(t);
 
+        m_animator.speed = 0;
+        EventManager.ExecuteEvent(Constants.ON_DEFEAT_CONDITION);
+    }
 }

@@ -19,15 +19,15 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
         this.onShootEvent += method;
     }
 
-    /// <summary>
-    /// Llamada externa para cargar la cadencia del arma que tengo en la mano
-    /// </summary>
-    /// <param name="time"></param>
-    public void SetGunshotInterval(float time)
-    {
-        this.gunShotInterval = time;
-        this.gunShotWaiter = new WaitForSeconds(time);
-    }
+    ///// <summary>
+    ///// Llamada externa para cargar la cadencia del arma que tengo en la mano
+    ///// </summary>
+    ///// <param name="time"></param>
+    //public void SetGunshotInterval(float time)
+    //{
+    //    this.gunShotInterval = time;
+    //    this.gunShotWaiter = new WaitForSeconds(time);
+    //}
 
     public void StartFire()
     {
@@ -63,12 +63,16 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
         stick.SubscribeToOnPress(StartFire);
         stick.SubscribeToOnRelease(HaltFire);
 
+        
+
     }
 
     private void Update()
     {
         simulatedInputVec.x = stick.Value.x;
         simulatedInputVec.z = stick.Value.y;
+
+        Debug.Log(simulatedInputVec.magnitude);
     }
     private void FixedUpdate()
     {

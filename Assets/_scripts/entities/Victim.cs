@@ -6,7 +6,6 @@ using System.Linq;
 
 public class Victim : Entity
 {
-    public static int TOTAL_VICTIMS = 0;
 
     protected FiniteStateMachine fsm;
     [SerializeField, InspectorName("Nodes to reach")]
@@ -34,7 +33,7 @@ public class Victim : Entity
     }
     protected virtual void Start()
     {
-        TOTAL_VICTIMS++;
+        GameManager.TOTAL_VICTIMS++;
         //Debug.Log(this.gameObject.name);
     }
 

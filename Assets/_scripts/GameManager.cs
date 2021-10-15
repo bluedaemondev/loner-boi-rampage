@@ -13,17 +13,20 @@ public class GameManager : MonoBehaviour
     }
 
     static GameManager _instance;
-    
+
     public SoundLibrary GameSounds;
 
     public Camera mainCamera;
 
     public Transform player;
 
+    public static int TOTAL_VICTIMS = 0;
+
     private void Awake()
     {
         EventManager.ResetEvents();
-        Victim.TOTAL_VICTIMS = 0;
+        
+        TOTAL_VICTIMS = 0;
 
         mainCamera = Camera.main;
     }

@@ -19,7 +19,9 @@ public abstract class Gun : MonoBehaviour
         if (shotHelper != null)
         {
             gunpointPivot = transform.Find("Gunpoint");
-            //shotHelper.SetGunshotInterval(timeBetweenShots);
+
+            //shotHelper.SubscribeToOnShoot(this.Fire);
+
             // .sethelper
         }
     }
