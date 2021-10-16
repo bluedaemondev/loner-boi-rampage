@@ -242,12 +242,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab14ba16e533684fb8794552477a3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   health_bar: {fileID: 0}
   m_animator: {fileID: 3199496309090917570}
   speed: 5
   movementInput: {fileID: 0}
   defaultGun: 2
   m_rigidbody: {fileID: 3199496309090917581}
+  selectedGun: {fileID: 4220957885067509535}
 --- !u!114 &3199496309090917583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stick: {fileID: 0}
+  equipedGun: {fileID: 4220957885067509535}
 --- !u!54 &3199496309090917581
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -890,6 +893,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4220957886227771812}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4220957885067509535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1260932795, guid: 0d6e2e1b7d2fc8e48a8872c6213a69b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4220957886227771812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199496310717223891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825c4fbdf7ac08c40a49b9eaec69c396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8355108812188938393
 PrefabInstance:
   m_ObjectHideFlags: 0

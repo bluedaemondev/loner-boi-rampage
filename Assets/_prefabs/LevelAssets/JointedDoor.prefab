@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136471154984931997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.41, z: -0.3}
-  m_LocalScale: {x: 3.7758458, y: 2.4716, z: 0.45283}
+  m_LocalPosition: {x: -0.65, y: 2.41, z: -0.3}
+  m_LocalScale: {x: 2.4431987, y: 2.4716, z: 0.45283}
   m_Children: []
   m_Father: {fileID: 1136471156188501933}
   m_RootOrder: 0
@@ -118,13 +118,13 @@ HingeJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136471154984931997}
   m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.5, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: -0.49, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.3, y: -2.3542, z: -6}
-  m_UseSpring: 0
+  m_ConnectedAnchor: {x: -0.65282226, y: -3.4399998, z: 15.580061}
+  m_UseSpring: 1
   m_Spring:
-    spring: 0
+    spring: 1
     damper: 0
     targetPosition: 0
   m_UseMotor: 0
@@ -143,7 +143,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
+  m_MassScale: 0.5
   m_ConnectedMassScale: 1
 --- !u!1 &1136471156188501930
 GameObject:
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 1136471156188501935}
   - component: {fileID: 1136471156188501932}
   m_Layer: 0
-  m_Name: DoorBase (3)
+  m_Name: JointedDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

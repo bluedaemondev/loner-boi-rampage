@@ -7,6 +7,8 @@ public abstract class Entity : MonoBehaviour
     public static Entity Player;
 
     public Health HealthSystem;
+    [SerializeField]
+    private float health = 100;
 
     [SerializeField] protected HealthBar health_bar;
     [SerializeField] protected Animator m_animator;
@@ -15,7 +17,7 @@ public abstract class Entity : MonoBehaviour
 
     protected virtual void Awake()
     {
-        this.HealthSystem = new Health(100);
+        this.HealthSystem = new Health(health);
         this.health_bar.SetUpLifeBar(this.HealthSystem);
     }
 
@@ -52,21 +54,14 @@ public abstract class Entity : MonoBehaviour
         m_animator.SetTrigger(triggName);
     }
 
-    protected void PlayDamagedAnimation()
+    protected virtual void PlayDamagedAnimation()
     {
         ToggleAnimatorTrigger("damaged");
     }
-    protected void PlayDeadAnimation()
+    protected virtual void PlayDeadAnimation()
     {
         ToggleAnimatorTrigger("died");
-        StartCoroutine(EnableTargetInTime(3f));
     }
 
-    IEnumerator EnableTargetInTime(float t)
-    {
-        yield return new WaitForSeconds(t);
-
-        m_animator.speed = 0;
-        EventManager.ExecuteEvent(Constants.ON_DEFEAT_CONDITION);
-    }
+    
 }

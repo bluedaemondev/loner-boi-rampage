@@ -6,6 +6,8 @@ using UnityEngine;
 public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
 {
     [SerializeField] private AnalogStickInput stick;
+    [SerializeField] private Gun equipedGun;
+
     private Vector3 simulatedInputVec;
     private Coroutine fireLoopCoroutine;
 
@@ -23,11 +25,11 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
     ///// Llamada externa para cargar la cadencia del arma que tengo en la mano
     ///// </summary>
     ///// <param name="time"></param>
-    //public void SetGunshotInterval(float time)
-    //{
-    //    this.gunShotInterval = time;
-    //    this.gunShotWaiter = new WaitForSeconds(time);
-    //}
+    public void SetGunshotInterval(float time)
+    {
+        this.gunShotInterval = time;
+        this.gunShotWaiter = new WaitForSeconds(time);
+    }
 
     public void StartFire()
     {
@@ -50,6 +52,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
     {
         while (true)
         {
+            Debug.Log("fire loop active , " + onShootEvent != null);
             yield return gunShotWaiter;
             onShootEvent?.Invoke();
         }
@@ -63,8 +66,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
         stick.SubscribeToOnPress(StartFire);
         stick.SubscribeToOnRelease(HaltFire);
 
-        
-
+        //onShootEvent += FireGun;
     }
 
     private void Update()
@@ -77,5 +79,9 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
     private void FixedUpdate()
     {
         transform.LookAt(transform.position + simulatedInputVec);
+    }
+    private void FireGun()
+    {
+        equipedGun.Fire();
     }
 }

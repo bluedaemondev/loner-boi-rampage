@@ -33,8 +33,6 @@ public class Cop : Victim
 
 
         this.fsm.ChangeState(currentState);
-
-        
     }
 
     protected override void OnDeadHandler()

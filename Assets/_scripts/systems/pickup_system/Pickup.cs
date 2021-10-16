@@ -24,6 +24,7 @@ public class Pickup : MonoBehaviour
 
         this.pickupStrategy.OnGrabPickup();
         DropFactory.Instance.pool.ReturnObject(this);
+
     }
 
     public Pickup SetPickupStrategy(IPickup newStrat, PickupType type)

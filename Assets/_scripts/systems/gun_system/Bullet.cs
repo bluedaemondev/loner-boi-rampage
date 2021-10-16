@@ -29,13 +29,23 @@ public class Bullet : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider other)
     {
         var entity = other.GetComponent<Entity>();
-
+        Blood blood;
         if (entity != null)
         {
             entity.TakeDamage(damage);
-            var blood = BloodFactory.Instance.pool.GetObject();
+            blood = BloodFactory.Instance.pool.GetObject();
             blood.transform.position = entity.transform.position;
 
+        }
+        else
+        {
+            var closestPoint = other.ClosestPoint(this.transform.position);
+
+            blood = BloodFactory.Instance.pool.GetObject();
+            blood.transform.position = closestPoint;
+            blood.transform.forward = (transform.position - closestPoint).normalized;
+
+            blood.GetComponent<ParticleSystem>().startColor = Color.yellow;
         }
         BulletFactory.Instance.ReturnBullet(this);
     }

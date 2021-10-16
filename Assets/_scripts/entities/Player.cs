@@ -65,8 +65,18 @@ public class Player : Entity
     {
         m_animator.Play("shooting");
     }
-    private void Damaged()
+
+    protected override void PlayDeadAnimation()
     {
-        m_animator.SetTrigger("damaged");
+        base.PlayDeadAnimation();
+        StartCoroutine(TriggerDefeat(2.8f));
+    }
+
+    IEnumerator TriggerDefeat(float t)
+    {
+        yield return new WaitForSeconds(t);
+
+        m_animator.speed = 0;
+        EventManager.ExecuteEvent(Constants.ON_DEFEAT_CONDITION);
     }
 }
