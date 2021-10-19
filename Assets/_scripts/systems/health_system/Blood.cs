@@ -14,6 +14,7 @@ public class Blood : MonoBehaviour
 
     private void Reset()
     {
+        particles.startColor = Color.red;
         particles.Clear();
         particles.Play();
     }

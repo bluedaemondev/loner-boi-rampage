@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Gun : MonoBehaviour
 {
     // crear clase base para reciclar el addon de disparo en enemigos y player
-    [SerializeField] public IGunner shotHelper;
+    //[SerializeField] public IGunner shotHelper;
 
     [SerializeField] private float timeBetweenShots;
     [SerializeField] protected AudioClip shootSound;
@@ -16,14 +16,15 @@ public abstract class Gun : MonoBehaviour
 
     protected void Start()
     {
-        if (shotHelper != null)
-        {
-            gunpointPivot = transform.Find("Gunpoint");
+        gunpointPivot = transform.Find("Gunpoint");
+        //if (shotHelper != null)
+        //{
+            
 
-            //shotHelper.SubscribeToOnShoot(this.Fire);
+        //    //shotHelper.SubscribeToOnShoot(this.Fire);
 
-            // .sethelper
-        }
+        //    // .sethelper
+        //}
     }
 
     public abstract void Fire();

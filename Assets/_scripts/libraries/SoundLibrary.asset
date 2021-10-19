@@ -19,3 +19,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1ab036474d06d454ea9ce6ed8bec3a19, type: 3}
   - name: gunpickup
     clip: {fileID: 8300000, guid: ce5ca146ffed1ea4e988ff686c1fd1bd, type: 3}
+  - name: damaged_entity
+    clip: {fileID: 8300000, guid: 0d62d2a117d908a4696f2f3b7e2c731c, type: 3}
+  - name: ui_click
+    clip: {fileID: 8300000, guid: 4dc985f9e2346e44797c9a45ea82a01d, type: 3}
+  - name: fall_down
+    clip: {fileID: 8300000, guid: 2be4884c53b8aad4483dc6616465ab11, type: 3}

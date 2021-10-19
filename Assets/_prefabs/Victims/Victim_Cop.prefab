@@ -102,6 +102,8 @@ MonoBehaviour:
   health: 70
   health_bar: {fileID: 1900877457778788500}
   m_animator: {fileID: 1900877457954718992}
+  corpsePrefab: {fileID: 5524141496343763923, guid: cfb91c69856af124da6c671570518196,
+    type: 3}
   waypointsToPatrol:
   - {fileID: 0}
   - {fileID: 0}
@@ -110,6 +112,7 @@ MonoBehaviour:
   m_agent: {fileID: 304587696}
   gunPrefab: {fileID: 9088856766623564218}
   gunType: 2
+  gunCurrent: {fileID: 9088856766623564218}
   shootingAddon: {fileID: 304587690}
   currentState: 1
 --- !u!114 &304587690

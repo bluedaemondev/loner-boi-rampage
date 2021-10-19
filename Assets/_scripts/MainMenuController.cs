@@ -20,6 +20,10 @@ public class MainMenuController : MonoBehaviour
     {
         ShowMainMenu();
     }
+    public void PlayUIClickSound()
+    {
+        SoundManager.instance.PlayEffect("ui_click");
+    }
     public void ShowMainMenu()
     {
         if (mainPanel == null)

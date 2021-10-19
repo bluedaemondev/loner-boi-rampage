@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class GunPickup : IPickup
 {
-    private Gun gunToGrab;
+    private GameObject gunToGrab;
 
-    public GunPickup(Gun prefabRef)
+    public GunPickup(GameObject prefabRef)
     {
-        this.gunToGrab = prefabRef;
+        this.gunToGrab = MonoBehaviour.Instantiate(prefabRef);
     }
 
     public void OnGrabPickup()
     {
         SoundManager.instance.PlayEffect("gunpickup");
-        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, gunToGrab.name);
+        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, gunToGrab.name, gunToGrab);
     }
 }

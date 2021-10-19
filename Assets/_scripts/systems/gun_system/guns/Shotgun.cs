@@ -6,12 +6,14 @@ public class Shotgun : Gun
 {
     [SerializeField]
     private List<Transform> aditionalGunpoints;
-    private List<Bullet> currentBullets;
+    private List<Bullet> currentBullets = new List<Bullet>();
 
     public override void Fire()
     {
-        currentBullets = BulletFactory.Instance.pool.GetObject(aditionalGunpoints.Count);
         int selectedGP = 0;
+
+        for (int i = 0; i < aditionalGunpoints.Count; i++)
+            currentBullets.Add(BulletFactory.Instance.pool.GetObject());
 
         foreach (var currBullet in currentBullets)
         {
@@ -28,7 +30,10 @@ public class Shotgun : Gun
                 currBullet.transform.position = aditionalGunpoints[selectedGP].transform.position;
                 currBullet.transform.forward = aditionalGunpoints[selectedGP].forward;
             }
+
         }
+
+        currentBullets.Clear();
 
         if (shootSound != null)
         {

@@ -30,7 +30,7 @@ public abstract class Entity : MonoBehaviour
     {
         GameManager.TOTAL_VICTIMS--;
 
-        Debug.Log(GameManager.TOTAL_VICTIMS);
+        //Debug.Log(GameManager.TOTAL_VICTIMS);
 
         if (GameManager.TOTAL_VICTIMS == 0)
         {

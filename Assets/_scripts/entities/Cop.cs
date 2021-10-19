@@ -7,8 +7,9 @@ public class Cop : Victim
 {
     [SerializeField] protected GameObject gunPrefab;
     [SerializeField] protected PickupType gunType;
-
-    protected Gun gunscript;
+    
+    [SerializeField]
+    protected GameObject gunCurrent;
 
     [SerializeField]
     protected ShootAddon shootingAddon;
@@ -24,12 +25,12 @@ public class Cop : Victim
         if(!shootingAddon)
             shootingAddon = GetComponent<ShootAddon>();
 
-        this.gunscript = gunPrefab.GetComponent<Gun>();
-        gunscript.shotHelper = this.shootingAddon;
+        //this.gunscript = gunPrefab.GetComponent<Gun>();
+        //gunCurrent.GetComponent<Gun>().shotHelper = this.shootingAddon;
 
 
         this.fsm.AddState(VictimEnum.Aiming, new AimingState());
-        this.fsm.AddState(VictimEnum.Shooting, new ShootingState(fsm, shootingAddon, gunscript));
+        this.fsm.AddState(VictimEnum.Shooting, new ShootingState(fsm, shootingAddon, gunCurrent.GetComponent<Gun>()));
 
 
         this.fsm.ChangeState(currentState);
@@ -37,13 +38,23 @@ public class Cop : Victim
 
     protected override void OnDeadHandler()
     {
-        base.OnDeadHandler();
+        //base.OnDeadHandler();
         var gun = DropFactory.Instance.pool.GetObject();
-        gun.SetPickupStrategy(new GunPickup(gunscript), gunType);
+
+        gun.SetPickupStrategy(new GunPickup(gunCurrent), gunType);
 
         gun.transform.position = transform.position + Vector3.right;
+        StartCoroutine(WaitTillNextFrameAndDie());
 
+    }
+
+    IEnumerator WaitTillNextFrameAndDie()
+    {
+        ToggleAnimatorTrigger("dying");
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(1f);
         Entity.DestroyEntity(this);
+
     }
 
 }

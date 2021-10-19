@@ -6,6 +6,7 @@ using System.Linq;
 
 public class Victim : Entity
 {
+    public GameObject corpsePrefab;
 
     protected FiniteStateMachine fsm;
     [SerializeField, InspectorName("Nodes to reach")]
@@ -46,14 +47,18 @@ public class Victim : Entity
     {
 
         int amountPicked = Random.Range(1, 4);
-        var lDrop = DropFactory.Instance.pool.GetObject(amountPicked);
 
         for (int item = 0; item < amountPicked; item++)
         {
-            lDrop[item] = lDrop[item].SetPickupStrategy(new CashPickup(Random.Range(maxPickupsDrop / 3, maxPickupsDrop + 1)), PickupType.Cash);
-            lDrop[item].transform.position = transform.position;
+            var lDrop = DropFactory.Instance.pool.GetObject();
+            lDrop.SetPickupStrategy(new CashPickup(Random.Range(maxPickupsDrop / 3, maxPickupsDrop + 1)), PickupType.Cash);
+            lDrop.transform.position = transform.position;
         }
 
+        if(corpsePrefab)
+        {
+            Instantiate(corpsePrefab, transform.position + Vector3.down, Quaternion.Euler(Random.Range(0, 360), 0 , 0),null);
+        }
         Entity.DestroyEntity(this);
     }
 

@@ -19,7 +19,7 @@ public class NextSceneButtonUI : MonoBehaviour
         Debug.Log(SManager.sceneCountInBuildSettings);
         Debug.Log(next + 1);
 
-        if (SManager.sceneCountInBuildSettings <= next + 1)
+        if ( next + 1 <= SManager.sceneCountInBuildSettings)
             SManager.LoadScene(next);
         else
             SManager.LoadScene(0);

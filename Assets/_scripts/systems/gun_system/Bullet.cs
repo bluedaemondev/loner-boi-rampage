@@ -36,6 +36,8 @@ public class Bullet : MonoBehaviour
             blood = BloodFactory.Instance.pool.GetObject();
             blood.transform.position = entity.transform.position;
 
+            FindObjectOfType<CameraShake>().ShakeCameraNormal(Random.Range(5,9), 0.22f);
+            SoundManager.instance.PlayEffect("damaged_entity");
         }
         else
         {
@@ -47,6 +49,7 @@ public class Bullet : MonoBehaviour
 
             blood.GetComponent<ParticleSystem>().startColor = Color.yellow;
         }
+
         BulletFactory.Instance.ReturnBullet(this);
     }
     //protected virtual void OnCollisionEnter(Collision collision)

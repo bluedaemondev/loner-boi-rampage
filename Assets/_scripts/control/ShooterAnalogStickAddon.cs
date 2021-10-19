@@ -54,6 +54,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
         {
             Debug.Log("fire loop active , " + onShootEvent != null);
             yield return gunShotWaiter;
+            FireGun();
             onShootEvent?.Invoke();
         }
     }
@@ -74,7 +75,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
         simulatedInputVec.x = stick.Value.x;
         simulatedInputVec.z = stick.Value.y;
 
-        Debug.Log(simulatedInputVec.magnitude);
+        //Debug.Log(simulatedInputVec.magnitude);
     }
     private void FixedUpdate()
     {

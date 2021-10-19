@@ -6,13 +6,13 @@ public class Player : Entity
 {
     [SerializeField] private float speed = 5;
     [SerializeField] private AnalogStickInput movementInput;
-    
+
     [Header("Elegir solo armas")]
     [SerializeField] private PickupType defaultGun;
 
     [SerializeField] private Rigidbody m_rigidbody;
 
-    [SerializeField] private Gun selectedGun;
+    [SerializeField] private GameObject selectedGun;
 
 
     protected override void Awake()
@@ -33,15 +33,17 @@ public class Player : Entity
         this.HealthSystem.SubscribeDamagedHandler(PlayDamagedAnimation);
         this.HealthSystem.SubscribeDeadHandler(PlayDeadAnimation);
 
-        this.selectedGun.shotHelper = this.GetComponent<ShooterAnalogStickAddon>();
-        this.selectedGun.shotHelper.SubscribeToOnShoot(Shoot);
+        //this.selectedGun.GetComponent<Gun>().shotHelper = this.GetComponent<ShooterAnalogStickAddon>();
+        //this.selectedGun.GetComponent<Gun>().shotHelper.SubscribeToOnShoot(Shoot);
+
+        EventManager.SubscribeToEvent(Constants.ON_WEAPON_CHANGE, UpdateWeapon);
 
     }
 
     private void Start()
     {
         //var tmp = System.Enum.GetName(typeof(PickupType), defaultGun);
-        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, selectedGun.name);
+        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, selectedGun.name, selectedGun);
     }
 
     private void FixedUpdate()
@@ -78,5 +80,14 @@ public class Player : Entity
 
         m_animator.speed = 0;
         EventManager.ExecuteEvent(Constants.ON_DEFEAT_CONDITION);
+    }
+
+    public void UpdateWeapon(params object[] pr)
+    {
+        // ignore pr[0] => gameobjectName
+        Debug.Log("pr " + pr.Length);
+
+        this.selectedGun = ((GameObject)pr[1]);
+        this.GetComponent<ShooterAnalogStickAddon>().SetGunshotInterval(selectedGun.GetComponent<Gun>().TimeBetweenShots);
     }
 }
