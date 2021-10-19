@@ -52,6 +52,8 @@ public class Cop : Victim
     {
         ToggleAnimatorTrigger("dying");
         GetComponent<Collider>().enabled = false;
+        shootingAddon.enabled = false;
+
         yield return new WaitForSeconds(1f);
         Entity.DestroyEntity(this);
 
