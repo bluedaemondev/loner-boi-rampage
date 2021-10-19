@@ -25,3 +25,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4dc985f9e2346e44797c9a45ea82a01d, type: 3}
   - name: fall_down
     clip: {fileID: 8300000, guid: 2be4884c53b8aad4483dc6616465ab11, type: 3}
+  - name: exit_music
+    clip: {fileID: 8300000, guid: 888cf801c388c234da785cf6f28caa1a, type: 3}
+  - name: steps
+    clip: {fileID: 8300000, guid: d8289c935da516e4181f81f84176af89, type: 3}

@@ -18362,22 +18362,22 @@ PrefabInstance:
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4251904
+      value: 0.42519268
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.085459426
+      value: 0.085407026
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040366936
+      value: -0.040342174
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9001557
+      value: 0.9001608
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192646, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -18392,22 +18392,22 @@ PrefabInstance:
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4251904
+      value: 0.42519268
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.085459426
+      value: 0.085407026
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040366936
+      value: -0.040342174
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9001557
+      value: 0.9001608
       objectReference: {fileID: 0}
     - target: {fileID: 4993799011345860844, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -19146,6 +19146,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8507812156917594323, guid: fd90dc48f195ad34b81dff4bfb9cfdc6,
+        type: 3}
+      propertyPath: closeDoorClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 888cf801c388c234da785cf6f28caa1a, type: 3}
     - target: {fileID: 8507812156917594325, guid: fd90dc48f195ad34b81dff4bfb9cfdc6,
         type: 3}
       propertyPath: m_LocalPosition.x

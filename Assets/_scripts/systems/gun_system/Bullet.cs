@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
             blood.transform.position = entity.transform.position;
 
             FindObjectOfType<CameraShake>().ShakeCameraNormal(Random.Range(5,9), 0.22f);
-            SoundManager.instance.PlayEffect("damaged_entity");
+            SoundManager.instance.PlayAmbient("damaged_entity");
         }
         else
         {

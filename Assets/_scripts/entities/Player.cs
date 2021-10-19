@@ -63,6 +63,10 @@ public class Player : Entity
             m_animator.SetBool("iswalking", false);
         }
     }
+    private void PlayWalkingSteps()
+    {
+        SoundManager.instance.PlayEffect("steps");
+    }
     private void Shoot()
     {
         m_animator.Play("shooting");

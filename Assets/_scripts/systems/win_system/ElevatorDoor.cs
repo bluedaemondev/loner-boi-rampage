@@ -36,6 +36,8 @@ public class ElevatorDoor : MonoBehaviour
     private void OpenDoor(params object[] vs)
     {
         this.m_animator.SetBool("isClosed", false);
+        SoundManager.instance.PlayMusic(GameManager.Instance.GameSounds.levelSounds.Find(c => c.name == "exit_music").clip);
+
     }
     private void CloseDoor(params object[] vs)
     {
