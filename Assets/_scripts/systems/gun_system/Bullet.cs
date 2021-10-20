@@ -44,7 +44,6 @@ public class Bullet : MonoBehaviour
             blood.transform.position = entity.transform.position;
 
             FindObjectOfType<CameraShake>().ShakeCameraNormal(Random.Range(5,9), 0.22f);
-            SoundManager.instance.PlayAmbient("damaged_entity");
         }
         else
         {
@@ -62,16 +61,10 @@ public class Bullet : MonoBehaviour
 
         BulletFactory.Instance.ReturnBullet(this);
     }
-    //protected virtual void OnCollisionEnter(Collision collision)
-    //{
-    //    BulletFactory.Instance.ReturnBullet(this);
-
-    //}
 
     private void Reset()
     {
         _currentDistance = 0;
-        transform.localScale = originalScale;
 
         trail.Clear();
     }
@@ -85,6 +78,7 @@ public class Bullet : MonoBehaviour
 
     public static void TurnOff(Bullet b)
     {
+        b.transform.localScale = b.originalScale;
         b.gameObject.SetActive(false);
     }
 }
