@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
     // Juan Lanosa
     public static SoundManager instance { get; private set; }
 
-    [Header("0: music | 1: ambient | 2: sound effects"), SerializeField]
+    [Header("0: music | 1: ambient | 2: sound effects | 3: extras"), SerializeField]
     private AudioSource[] sources;
 
     void Awake()
@@ -49,6 +49,21 @@ public class SoundManager : MonoBehaviour
             }
             else
                 this.sources[1].PlayOneShot(cached);
+        }
+    }
+    public void PlayExtraAmbient(string clip)
+    {
+        var cached = SoundLibrary.GetByName(clip, GameManager.Instance.GameSounds);
+
+        if (cached != default(AudioClip))
+        {
+            if (this.sources[3].isPlaying)
+            {// aca falta una coroutine
+                this.sources[3].clip = cached;
+                this.sources[3].PlayDelayed(this.sources[3].clip.length);
+            }
+            else
+                this.sources[3].PlayOneShot(cached);
         }
     }
     public void PlayEffect(AudioClip clip)

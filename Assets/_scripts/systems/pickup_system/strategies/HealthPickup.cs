@@ -24,6 +24,6 @@ public class HealthPickup : IPickup
     {
         Debug.Log(string.Format("hp {0} pickup grab", this.healthToRecover));
         this.onPickupGrabbed?.Invoke(this.healthToRecover);
-        SoundManager.instance.PlayEffect("healthpickup");
+        SoundManager.instance.PlayAmbient("healthpickup");
     }
 }

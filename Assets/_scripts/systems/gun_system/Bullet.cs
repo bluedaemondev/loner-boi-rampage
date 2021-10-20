@@ -11,7 +11,14 @@ public class Bullet : MonoBehaviour
 
     protected float _currentDistance;
 
+    private Vector3 originalScale;
+
     [SerializeField] protected TrailRenderer trail;
+
+    private void Start()
+    {
+        originalScale = transform.localScale;
+    }
 
     protected virtual void Update()
     {
@@ -48,6 +55,9 @@ public class Bullet : MonoBehaviour
             blood.transform.forward = (transform.position - closestPoint).normalized;
 
             blood.GetComponent<ParticleSystem>().startColor = Color.yellow;
+
+            FindObjectOfType<CameraShake>().ShakeCameraNormal(Random.Range(3, 9), 0.1f);
+            SoundManager.instance.PlayExtraAmbient("break_shoot");
         }
 
         BulletFactory.Instance.ReturnBullet(this);
@@ -61,6 +71,8 @@ public class Bullet : MonoBehaviour
     private void Reset()
     {
         _currentDistance = 0;
+        transform.localScale = originalScale;
+
         trail.Clear();
     }
 
