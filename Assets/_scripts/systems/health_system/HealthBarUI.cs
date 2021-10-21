@@ -7,9 +7,14 @@ public class HealthBarUI : HealthBar
 {
     [SerializeField] private Slider slider;
 
+    public override void Start()
+    {
+        //this.slider = transform.Find()
+    }
+
     public override void SetUpLifeBar(Health hRef)
     {
-        base.SetUpLifeBar(hRef);
+        this.healthSys = hRef.SetHealthChangedHandler(this.OnHealthChanged);
 
         this.slider.maxValue = 1;
         this.slider.value = hRef.GetHealthPercentaje();
@@ -17,6 +22,7 @@ public class HealthBarUI : HealthBar
 
     public override void OnHealthChanged()
     {
+        Debug.Log("asd " + this.healthSys.GetHealthPercentaje());
         this.slider.value = this.healthSys.GetHealthPercentaje();
     }
 }

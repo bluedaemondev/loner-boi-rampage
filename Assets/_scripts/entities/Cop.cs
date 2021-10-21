@@ -51,8 +51,10 @@ public class Cop : Victim
     IEnumerator WaitTillNextFrameAndDie()
     {
         ToggleAnimatorTrigger("dying");
-        GetComponent<Collider>().enabled = false;
+        this.fsm.ChangeState(VictimEnum.Idle);
         shootingAddon.enabled = false;
+        yield return null;
+        GetComponent<Collider>().enabled = false;
 
         yield return new WaitForSeconds(1f);
         Entity.DestroyEntity(this);

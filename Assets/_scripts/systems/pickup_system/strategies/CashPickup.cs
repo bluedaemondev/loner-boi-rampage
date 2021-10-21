@@ -5,6 +5,7 @@ using UnityEngine;
 public class CashPickup : IPickup
 {
     private int amount;
+    private Entity grabber;
 
     public CashPickup(int amount)
     {
@@ -16,4 +17,8 @@ public class CashPickup : IPickup
         SoundManager.instance.PlayAmbient("cashpickup");
     }
 
+    public void SetGrabber(GameObject other = null)
+    {
+        this.grabber = other.GetComponent<Entity>();
+    }
 }

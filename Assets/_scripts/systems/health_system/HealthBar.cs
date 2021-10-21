@@ -8,10 +8,10 @@ public class HealthBar : MonoBehaviour
 
     protected Transform lifeBarFill;
 
-    public void Start()
+    public virtual void Start()
     {
         this.lifeBarFill = transform.Find("Bar");
-        
+
     }
 
     public virtual void SetUpLifeBar(Health hRef)
@@ -20,6 +20,7 @@ public class HealthBar : MonoBehaviour
     }
     public virtual void OnHealthChanged()
     {
-        this.lifeBarFill.localScale = new Vector3(this.healthSys.GetHealthPercentaje(), 1);
+
+        this.lifeBarFill.localScale = new Vector3(this.healthSys.GetHealthPercentaje(), 1, 1);
     }
 }

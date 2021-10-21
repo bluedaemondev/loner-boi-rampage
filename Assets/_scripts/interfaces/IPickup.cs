@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IPickup 
 {
     void OnGrabPickup();
+    void SetGrabber(GameObject other = null);
 }

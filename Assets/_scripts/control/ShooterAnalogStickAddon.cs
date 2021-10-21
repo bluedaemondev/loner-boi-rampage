@@ -27,8 +27,10 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
     ///// <param name="time"></param>
     public void SetGunshotInterval(float time)
     {
-        this.gunShotInterval = time;
-        this.gunShotWaiter = new WaitForSeconds(time);
+        //this.gunShotInterval = time;
+        gunShotInterval = this.equipedGun.TimeBetweenShots;
+        this.fireLoopCoroutine = null;
+        this.gunShotWaiter = new WaitForSeconds(gunShotInterval);
     }
 
     public void StartFire()
