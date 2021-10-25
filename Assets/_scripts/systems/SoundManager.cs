@@ -36,6 +36,22 @@ public class SoundManager : MonoBehaviour
     {
         this.sources[1].PlayOneShot(clip);
     }
+    public void PlayMusic(string clip)
+    {
+        var cached = SoundLibrary.GetByName(clip, GameManager.Instance.GameSounds);
+
+        if (cached != default(AudioClip))
+        {
+            this.sources[1].clip = cached;
+
+            if (this.sources[1].isPlaying)
+            {// aca falta una coroutine
+                this.sources[1].PlayDelayed(0.2f);
+            }
+            else
+                this.sources[1].Play();
+        }
+    }
     public void PlayAmbient(string clip)
     {
         var cached = SoundLibrary.GetByName(clip, GameManager.Instance.GameSounds);

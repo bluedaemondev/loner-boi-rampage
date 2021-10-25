@@ -24,16 +24,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        _instance = this;
+
         EventManager.ResetEvents();
         
         TOTAL_VICTIMS = 0;
 
         mainCamera = Camera.main;
     }
-    void Start()
-    {
-        _instance = this;
-    }
+    //void Start()
+    //{
+        
+    //}
 
     #region DEBUGGING
     //Health healthSystemTesting;
