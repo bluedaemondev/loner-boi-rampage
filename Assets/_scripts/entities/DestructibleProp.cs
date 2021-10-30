@@ -24,21 +24,12 @@ public class DestructibleProp : MonoBehaviour, IDamageable
         Destroy(this.gameObject);
     }
 
-    public void OnTakeDamage()
+    public void OnTakeDamage(float ammount)
     {
-        health--;
+        health -= ammount;
         if (health <= 0)
         {
             OnExplode();
-        }
-    }
-
-    // Start is called before the first frame update
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Bullet>())
-        {
-            OnTakeDamage();
         }
     }
 

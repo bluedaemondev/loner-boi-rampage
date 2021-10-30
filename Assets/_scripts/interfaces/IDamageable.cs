@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    void OnTakeDamage();
+    void OnTakeDamage(float amount);
     void OnExplode();
 }

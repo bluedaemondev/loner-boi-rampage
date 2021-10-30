@@ -35,13 +35,13 @@ public class Bullet : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        var entity = other.GetComponent<Entity>();
+        var entity = other.GetComponent<IDamageable>();
         Blood blood;
         if (entity != null)
         {
-            entity.TakeDamage(damage);
+            entity.OnTakeDamage(damage);
             blood = BloodFactory.Instance.pool.GetObject();
-            blood.transform.position = entity.transform.position;
+            blood.transform.position = transform.position;
 
             FindObjectOfType<CameraShake>().ShakeCameraNormal(Random.Range(5,9), 0.22f);
         }

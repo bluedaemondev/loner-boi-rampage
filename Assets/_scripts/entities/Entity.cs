@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour, IDamageable
 {
     public static Entity Player;
 
@@ -24,14 +24,6 @@ public abstract class Entity : MonoBehaviour
         this.health_bar.SetUpLifeBar(this.HealthSystem);
     }
 
-    public virtual void TakeDamage(float damage)
-    {
-        this.HealthSystem.TakeDamage(damage);
-        SoundManager.instance.PlayAmbient("damaged_entity");
-        
-        if (sleepCo == null)
-            sleepCo = StartCoroutine(Sleep(0.125f));
-    }
     protected IEnumerator Sleep(float t)
     {
         Time.timeScale = 0.85f;
@@ -78,5 +70,17 @@ public abstract class Entity : MonoBehaviour
         ToggleAnimatorTrigger("died");
     }
 
+    public virtual void OnTakeDamage(float damage)
+    {
+        this.HealthSystem.TakeDamage(damage);
+        SoundManager.instance.PlayAmbient("damaged_entity");
 
+        if (sleepCo == null)
+            sleepCo = StartCoroutine(Sleep(0.125f));
+    }
+
+    public virtual void OnExplode()
+    {
+        throw new System.NotImplementedException();
+    }
 }
