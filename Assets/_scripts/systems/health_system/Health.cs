@@ -70,6 +70,7 @@ public class Health
     public void TakeDamage(float dmgAmount)
     {
         this.currentHealth -= dmgAmount;
+
         if (this.currentHealth < 0)
             this.currentHealth = 0;
 

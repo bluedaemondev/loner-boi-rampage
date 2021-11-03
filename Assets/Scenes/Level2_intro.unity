@@ -26325,56 +26325,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8204088940057145471, guid: d5ea09f44ea27d249bbe9ff334f03e9a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5ea09f44ea27d249bbe9ff334f03e9a, type: 3}
---- !u!1 &1583567850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8204088940057145459, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1583567849}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1583567851 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8204088940216630776, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1583567849}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6fb09a2946fc1448fc287cb57d4a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!195 &1583567852 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 4027182141030279843, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1583567849}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1583567853 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8204088940057145468, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1583567849}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1583567854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583567850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e6134eb84cce947abb3ab1a4fe3466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  health_bar: {fileID: 1583567851}
-  m_animator: {fileID: 1583567853}
-  corpsePrefab: {fileID: 0}
-  waypointsToPatrol: []
-  maxPickupsDrop: 1
-  m_agent: {fileID: 1583567852}
-  healPower: 20
 --- !u!4 &1593985344 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5595735541822582369, guid: 1c8ab2e3d6d45e0489abdc483f5a0004,
@@ -27185,18 +27135,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1616454455 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8204088940216630776, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4714537294772809396}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6fb09a2946fc1448fc287cb57d4a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1617942360
 Mesh:
   m_ObjectHideFlags: 0
@@ -28508,44 +28446,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1686706305 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8204088940057145459, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4714537294772809396}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1686706306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686706305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e6134eb84cce947abb3ab1a4fe3466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  health_bar: {fileID: 1616454455}
-  m_animator: {fileID: 1686706307}
-  corpsePrefab: {fileID: 0}
-  waypointsToPatrol: []
-  maxPickupsDrop: 1
-  m_agent: {fileID: 1686706309}
-  healPower: 20
---- !u!95 &1686706307 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8204088940057145468, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4714537294772809396}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &1686706309 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 4027182141030279843, guid: d5ea09f44ea27d249bbe9ff334f03e9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4714537294772809396}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689976133
 GameObject:
   m_ObjectHideFlags: 0
@@ -36662,22 +36562,22 @@ PrefabInstance:
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.085407026
+      value: 0.08540702
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040342174
+      value: -0.04034218
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4251927
+      value: 0.42519274
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9001608
+      value: 0.90016073
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -36702,22 +36602,22 @@ PrefabInstance:
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.085407026
+      value: 0.08540702
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040342174
+      value: -0.04034218
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.4251927
+      value: 0.42519274
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9001608
+      value: 0.90016073
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
