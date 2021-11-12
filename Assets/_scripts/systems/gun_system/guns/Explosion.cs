@@ -13,5 +13,9 @@ public class Explosion : MonoBehaviour
         {
             damageable.OnTakeDamage(explosion_damage);
         }
+
+        //if(Physics.Raycast(new Ray(transform.position, transform.forward), out RaycastHit hit, viewDistance, obstacleLayer){
+
+        //}
     }
 }

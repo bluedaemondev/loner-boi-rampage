@@ -20,7 +20,7 @@ public class Pistol : Gun
         {
             firstShot = false;
             Debug.Log(currBullet.transform.localScale);
-            currBullet.transform.localScale = currBullet.transform.localScale * 2;
+            currBullet.transform.localScale = currBullet.transform.localScale * 5;
         }
 
         if (shootSound != null)

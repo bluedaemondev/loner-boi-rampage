@@ -13,6 +13,5 @@ public class CurrentWeaponUI : MonoBehaviour
     private void SetTextInfo(params object[] vs)
     {
         this.textContainer.text = vs[0].ToString(); 
-        // testear si ToString() trae bien, supongo que deberia. sino castear a Gun
     }
 }
