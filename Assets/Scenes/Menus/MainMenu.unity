@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e4182531dec394e82a826510154adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedLanguage: 1
+  defaultLanguage: 1
   externalURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vQnrW6J4o5eliDhS3AZds4bV-5vk1PD68qrjucb4njUAAYkIdXIZPgwgavQSjDqzdq4a88tATvXyuqI/pub?output=csv
 --- !u!4 &144484562
 Transform:

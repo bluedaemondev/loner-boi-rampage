@@ -63,7 +63,7 @@ public class LangManager : MonoBehaviour
 
     public string GetTranslate(string id)
     {
-        if (selectedLanguage != null && !languageManager[selectedLanguage ?? defaultLanguage].ContainsKey(id))
+        if (!languageManager[selectedLanguage ?? defaultLanguage].ContainsKey(id))
             return "Error 404: Not Found";
         else
             return languageManager[selectedLanguage ?? defaultLanguage][id];

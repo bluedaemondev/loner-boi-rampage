@@ -34,7 +34,8 @@ public class PointsDisplayUI : MonoBehaviour
         while (currentDisplay < maxDisplayTarget)
         {
             currentDisplay += 1;
-            pointsDisplay.text = string.Format(LangManager.Instance != null ? LangManager.Instance.GetTranslate(id) + ":\n$ {0}" : "Biyuya:\n$ {0}", currentDisplay);
+            pointsDisplay.text = 
+                string.Format(LangManager.Instance != null ? LangManager.Instance.GetTranslate(id) + ":\n$ {0}" : "$ {0}", currentDisplay);
             yield return awaiter;
         }
 
