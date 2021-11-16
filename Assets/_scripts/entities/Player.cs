@@ -43,7 +43,7 @@ public class Player : Entity
     private void Start()
     {
         //var tmp = System.Enum.GetName(typeof(PickupType), defaultGun);
-        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, selectedGun.name, selectedGun);
+        EventManager.ExecuteEvent(Constants.ON_WEAPON_CHANGE, selectedGun.id, selectedGun);
     }
 
     private void FixedUpdate()

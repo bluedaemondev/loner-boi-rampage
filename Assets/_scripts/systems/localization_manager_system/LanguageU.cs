@@ -58,6 +58,7 @@ public class LanguageU
                 continue;
             }
 
+            Debug.Log(columnToIndex["Idioma"].ToString());
             string langName = cells[columnToIndex["Idioma"]]; //Le decimos que tome el valor de la columna
                                                               //que se encuentra en Idioma
 

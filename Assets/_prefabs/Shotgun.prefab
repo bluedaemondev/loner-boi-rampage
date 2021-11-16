@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743c75e3f551e4441b65780211822a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: ID_Shotgun
   timeBetweenShots: 0.66
   shootSound: {fileID: 8300000, guid: e0875bca74a50354eb46ee810d977ba8, type: 3}
   aditionalGunpoints:

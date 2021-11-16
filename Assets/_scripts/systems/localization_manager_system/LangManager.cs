@@ -23,7 +23,8 @@ public class LangManager : MonoBehaviour
     static LangManager _instance;
 
     //Enum para saber en que idioma se va a ejecutar en un principio
-    public Language selectedLanguage;
+    public Language? selectedLanguage;
+    public Language defaultLanguage = Language.eng;
 
     //Diccionario de lenguaje, que va a contener otro diccionario que va a tomar de
     //key un ID y como Value el Texto correspondiente
@@ -35,8 +36,15 @@ public class LangManager : MonoBehaviour
     //Un evento para actualizar cuando se tiene que cambiar el idioma
     public event Action onUpdate = delegate { };
 
-    private void Start()
+    private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(_instance);
+        }
+
+        _instance = this;
+
         StartCoroutine(DownloadCSV(externalURL)); //Bajamos el archivo de inet
     }
 
@@ -55,10 +63,10 @@ public class LangManager : MonoBehaviour
 
     public string GetTranslate(string id)
     {
-        if (!languageManager[selectedLanguage].ContainsKey(id))
+        if (selectedLanguage != null && !languageManager[selectedLanguage ?? defaultLanguage].ContainsKey(id))
             return "Error 404: Not Found";
         else
-            return languageManager[selectedLanguage][id];
+            return languageManager[selectedLanguage ?? defaultLanguage][id];
     }
 
     /// <summary>

@@ -7,20 +7,18 @@ public class TextTranslate : MonoBehaviour
 {
     public string ID;
 
-    public LangManager manager;
-
     public Text myView;
 
 
-    void Awake()
+    void Start()
     {
-        manager.onUpdate += ChangeLang;
+        LangManager.Instance.onUpdate += ChangeLang;
     }
 
     void ChangeLang()
     {
         //var value = int.Parse(manager.GetTranslate(ID)); Si quisieran hacer cosas con enteros
 
-        myView.text = manager.GetTranslate(ID);
+        myView.text = LangManager.Instance.GetTranslate(ID);
     }
 }

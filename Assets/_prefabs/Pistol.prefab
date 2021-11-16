@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825c4fbdf7ac08c40a49b9eaec69c396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotHelper: {fileID: 0}
+  id: ID_Pistol
   timeBetweenShots: 0.123
   shootSound: {fileID: 8300000, guid: 6d0c69452ee629541a83efd63a0af045, type: 3}
+  firstShot: 1
 --- !u!1 &1654296763030118846
 GameObject:
   m_ObjectHideFlags: 0

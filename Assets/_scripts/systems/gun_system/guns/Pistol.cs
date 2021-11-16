@@ -10,7 +10,6 @@ public class Pistol : Gun
     public override void Fire()
     {
 
-
         currBullet = BulletFactory.Instance.pool.GetObject();
 
         currBullet.transform.position = gunpointPivot.transform.position;
