@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GunPickup : IPickup
 {
-    private GameObject gunToGrab;
+    private Gun gunToGrab;
     private Entity grabber;
 
     public GunPickup(GameObject prefabRef)
     {
-        this.gunToGrab = Object.Instantiate(prefabRef);
+        this.gunToGrab = Object.Instantiate(prefabRef, null).GetComponent<Gun>();
     }
 
     public void OnGrabPickup()

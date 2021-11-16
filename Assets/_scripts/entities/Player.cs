@@ -12,7 +12,7 @@ public class Player : Entity
 
     [SerializeField] private Rigidbody m_rigidbody;
 
-    [SerializeField] private GameObject selectedGun;
+    [SerializeField] private Gun selectedGun;
 
 
     protected override void Awake()
@@ -91,7 +91,7 @@ public class Player : Entity
         // ignore pr[0] => gameobjectName
         Debug.Log("pr " + pr.Length);
 
-        this.selectedGun = ((GameObject)pr[1]);
+        this.selectedGun = ((Gun)pr[1]);
         this.GetComponent<ShooterAnalogStickAddon>().SetGunshotInterval(selectedGun.GetComponent<Gun>().TimeBetweenShots);
     }
 }

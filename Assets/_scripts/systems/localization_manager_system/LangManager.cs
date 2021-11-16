@@ -12,6 +12,16 @@ public enum Language
 
 public class LangManager : MonoBehaviour
 {
+    public static LangManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    static LangManager _instance;
+
     //Enum para saber en que idioma se va a ejecutar en un principio
     public Language selectedLanguage;
 
@@ -20,7 +30,7 @@ public class LangManager : MonoBehaviour
     public Dictionary<Language, Dictionary<string, string>> languageManager;
 
     //URL para saber de donde descargar nuestro documento
-    public string externalURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPhGa-cr1r3OXSFMRqjSyJt6Z9LFbFpKFTEVe2Bs13oQ1iBLq0aT5E2W3bIFn2j6Ly3sZgq2gZTtab/pub?output=csv";
+    public string externalURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQnrW6J4o5eliDhS3AZds4bV-5vk1PD68qrjucb4njUAAYkIdXIZPgwgavQSjDqzdq4a88tATvXyuqI/pub?gid=0&single=true&output=csv";
 
     //Un evento para actualizar cuando se tiene que cambiar el idioma
     public event Action onUpdate = delegate { };

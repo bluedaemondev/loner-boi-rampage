@@ -5,6 +5,8 @@ public class PointsDisplayUI : MonoBehaviour
 {
     [SerializeField] private Text pointsDisplay;
 
+    public string id;
+
     private int currentDisplay;
     private int maxDisplayTarget;
 
@@ -32,7 +34,7 @@ public class PointsDisplayUI : MonoBehaviour
         while (currentDisplay < maxDisplayTarget)
         {
             currentDisplay += 1;
-            pointsDisplay.text = string.Format("Total biyuya:\n$ {0}", currentDisplay);
+            pointsDisplay.text = string.Format(LangManager.Instance != null ? LangManager.Instance.GetTranslate(id) + ":\n$ {0}" : "Biyuya:\n$ {0}", currentDisplay);
             yield return awaiter;
         }
 

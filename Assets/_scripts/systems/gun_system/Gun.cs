@@ -7,6 +7,8 @@ public abstract class Gun : MonoBehaviour
     // crear clase base para reciclar el addon de disparo en enemigos y player
     //[SerializeField] public IGunner shotHelper;
 
+    public string id;
+
     [SerializeField] private float timeBetweenShots;
     [SerializeField] protected AudioClip shootSound;
 
