@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Controlador para menu principal. Metodos para botones
 /// </summary>
-public class MainMenuController : MonoBehaviour
+public class MainMenuController : MonoBehaviour, IScreen
 {
-    // Juan Lanosa
     
     public GameObject mainPanel;
     public GameObject creditsPanel;
@@ -89,6 +88,22 @@ public class MainMenuController : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Activate()
+    {
+        ShowMainMenu();
+    }
+
+    public void Deactivate()
+    {
+        Debug.Log("Saliendo del menu");
+    }
+
+    public string Free()
+    {
+        this.gameObject.SetActive(false);
+        return "MainMenu";
     }
     #endregion
 }

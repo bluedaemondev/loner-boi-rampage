@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Button = UnityEngine.UI.Button;
 /// <summary>
 /// Control para menu de pausa. Se encuentra en escena
 /// y tiene un objeto hijo con todos los elementos de ui
 /// que se activan/desactivan
 /// </summary>
-public class PauseMenuController : MonoBehaviour
+public class PauseMenuController : MonoBehaviour, IScreen
 {
+    [SerializeField]
+    Button[] content;
+
     public static PauseMenuController Instance
     {
         get
@@ -42,5 +45,27 @@ public class PauseMenuController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(Constants.MAIN_MENU_BUILD_IDX);
+    }
+
+    public void Activate()
+    {
+        foreach(var item in content)
+        {
+            item.interactable = true;
+        }
+    }
+
+    public void Deactivate()
+    {
+        foreach (var item in content)
+        {
+            item.interactable = false;
+        }
+    }
+
+    public string Free()
+    {
+        this.gameObject.SetActive(false);
+        return "Pause Screen Disabled";
     }
 }

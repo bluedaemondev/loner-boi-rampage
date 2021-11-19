@@ -8,11 +8,25 @@ public class ScreenManager : MonoBehaviour
 
     public string lastResult;
 
-    static public ScreenManager Instance;
-    
+    public static ScreenManager Instance {
+        get
+        {
+            return _instance;
+        }
+    }
+    private static ScreenManager _instance;
+
     void Awake()
     {
-        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
+        if (_instance != null)
+        {
+            Destroy(_instance);
+        }
+
+        _instance = this;
+
 
         _stack = new Stack<IScreen>();
     }
@@ -43,8 +57,10 @@ public class ScreenManager : MonoBehaviour
 
     public void Push(string resource)
     {
-        var go = Instantiate(Resources.Load<GameObject>(resource));
+        Debug.Log("Pushing " + resource);
 
+        var go = Instantiate(Resources.Load<GameObject>(resource));
+        Debug.Log(go.activeSelf);
         Push(go.GetComponent<IScreen>());
     }
   

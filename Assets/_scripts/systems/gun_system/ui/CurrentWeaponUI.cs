@@ -13,6 +13,6 @@ public class CurrentWeaponUI : MonoBehaviour
     private void SetTextInfo(params object[] vs)
     {
         print(vs[0].ToString());
-        this.textContainer.text = LangManager.Instance != null? LangManager.Instance.GetTranslate(vs[0].ToString()) : ((Gun)vs[1]).name; 
+        this.textContainer.text = LangManager.Instance ? LangManager.Instance.GetTranslate(vs[0].ToString()) : "Gun";// ((Gun)vs[1]).name 
     }
 }

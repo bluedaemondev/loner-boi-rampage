@@ -17,8 +17,18 @@ public class TextTranslate : MonoBehaviour
 
     void ChangeLang()
     {
-        //var value = int.Parse(manager.GetTranslate(ID)); Si quisieran hacer cosas con enteros
+        print("Translating " + this.name);
 
-        myView.text = LangManager.Instance.GetTranslate(ID);
+        if (LangManager.Instance != null)
+            myView.text = LangManager.Instance.GetTranslate(ID);
+    }
+    IEnumerator AwaitCodexTranslate()
+    {
+        bool translated = false;
+        while( !translated || LangManager.Instance == null)
+        {
+            yield return null;
+        }
+
     }
 }

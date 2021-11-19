@@ -61,7 +61,7 @@ public class SoundManager : MonoBehaviour
             if (this.sources[1].isPlaying)
             {// aca falta una coroutine
                 this.sources[1].clip = cached;
-                this.sources[1].PlayDelayed(this.sources[2].clip.length);
+                this.sources[1].PlayDelayed(this.sources[1].clip.length);
             }
             else
                 this.sources[1].PlayOneShot(cached);

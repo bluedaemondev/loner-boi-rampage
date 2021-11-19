@@ -22,12 +22,12 @@ public class PatrolState : IState
 
     public void OnStart()
     {
-        Debug.Log("Entre en patrol");
+        //Debug.Log("Entre en patrol");
     }
 
     public void OnUpdate()
     {
-        Debug.Log("Patroling...");
+        //Debug.Log("Patroling...");
 
         this.movement.Move();
 
@@ -44,7 +44,7 @@ public class PatrolState : IState
 
     public void OnExit()
     {
-        Debug.Log("Sali de patrol");
+        //Debug.Log("Sali de patrol");
         //throw new System.NotImplementedException();
     }
 

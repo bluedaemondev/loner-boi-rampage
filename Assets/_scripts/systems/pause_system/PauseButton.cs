@@ -7,10 +7,15 @@ public class PauseButton : MonoBehaviour
     private void Awake()
     {
         this.button = GetComponent<Button>();
-        this.button.onClick.AddListener(PauseGame);
     }
-    private void PauseGame()
+    public void PauseGame()
     {
-        PauseMenuController.Instance.TogglePauseState();
+        //PauseMenuController.Instance.TogglePauseState();
+        ScreenManager.Instance?.Push("Pause_Screen");
+    }
+    public void UnpauseGame()
+    {
+        ScreenManager.Instance.lastResult = "Back";
+        ScreenManager.Instance.Pop();
     }
 }

@@ -48,25 +48,23 @@ public class LangManager : MonoBehaviour
         StartCoroutine(DownloadCSV(externalURL)); //Bajamos el archivo de inet
     }
 
-    private void Update()
+    public void TranslateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (selectedLanguage == Language.eng)
-                selectedLanguage = Language.spa;
-            else
-                selectedLanguage = Language.eng;
+        if (selectedLanguage == Language.eng)
+            selectedLanguage = Language.spa;
+        else
+            selectedLanguage = Language.eng;
 
-            onUpdate();
-        }
+        onUpdate();
     }
-
     public string GetTranslate(string id)
     {
-        if (!languageManager[selectedLanguage ?? defaultLanguage].ContainsKey(id))
+        if (languageManager != null && !languageManager[selectedLanguage ?? defaultLanguage].ContainsKey(id))
             return "Error 404: Not Found";
-        else
+        else if (languageManager != null)
             return languageManager[selectedLanguage ?? defaultLanguage][id];
+        else
+            return "Lang manager not available";
     }
 
     /// <summary>
