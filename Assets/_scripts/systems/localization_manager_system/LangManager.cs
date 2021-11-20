@@ -26,14 +26,10 @@ public class LangManager : MonoBehaviour
     public Language? selectedLanguage;
     public Language defaultLanguage = Language.eng;
 
-    //Diccionario de lenguaje, que va a contener otro diccionario que va a tomar de
-    //key un ID y como Value el Texto correspondiente
     public Dictionary<Language, Dictionary<string, string>> languageManager;
 
-    //URL para saber de donde descargar nuestro documento
     public string externalURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQnrW6J4o5eliDhS3AZds4bV-5vk1PD68qrjucb4njUAAYkIdXIZPgwgavQSjDqzdq4a88tATvXyuqI/pub?gid=0&single=true&output=csv";
 
-    //Un evento para actualizar cuando se tiene que cambiar el idioma
     public event Action onUpdate = delegate { };
 
     private void Awake()

@@ -18,15 +18,13 @@ public class ScreenManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         if (_instance != null)
         {
             Destroy(_instance);
         }
 
         _instance = this;
-
+        DontDestroyOnLoad(this.gameObject);
 
         _stack = new Stack<IScreen>();
     }
