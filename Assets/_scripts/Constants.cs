@@ -18,4 +18,7 @@
 
     // lista de constantes de escenas utilizadas
     public const int MAIN_MENU_BUILD_IDX = 0;
+
+
+    public const int CASH_DEFAULT_PICKUP = 50;
 }

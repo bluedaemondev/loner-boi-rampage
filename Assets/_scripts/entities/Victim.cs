@@ -11,8 +11,6 @@ public class Victim : Entity
     protected FiniteStateMachine fsm;
     [SerializeField, InspectorName("Nodes to reach")]
     protected List<Transform> waypointsToPatrol;
-    [SerializeField, Header("Max cash")]
-    protected int maxPickupsDrop;
 
     [SerializeField]
     protected NavMeshAgent m_agent;
@@ -51,7 +49,8 @@ public class Victim : Entity
         for (int item = 0; item < amountPicked; item++)
         {
             var lDrop = DropFactory.Instance.pool.GetObject();
-            lDrop.SetPickupStrategy(new CashPickup(Random.Range(maxPickupsDrop / 3, maxPickupsDrop + 1)), PickupType.Cash);
+            lDrop.SetPickupStrategy(new CashPickup(Constants.CASH_DEFAULT_PICKUP), PickupType.Cash);
+
             lDrop.transform.position = transform.position;
         }
 
