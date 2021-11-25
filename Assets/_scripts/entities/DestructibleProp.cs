@@ -9,14 +9,14 @@ public class DestructibleProp : MonoBehaviour, IDamageable
     [SerializeField]
     private ParticleSystem particlesDamage;
     [SerializeField]
-    private GameObject wallPiecePrefab;
+    private GameObject piecePrefab;
 
     public void OnExplode()
     {
 
         for (int i = 0; i < health; i++)
         {
-            Instantiate(wallPiecePrefab, transform.position + Random.insideUnitSphere * Random.Range(-2, 2), Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
+            Instantiate(piecePrefab, transform.position + Random.insideUnitSphere * Random.Range(-2, 2), Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)));
         }
 
         FindObjectOfType<CameraShake>().ShakeCameraNormal(4, 1f);
@@ -26,7 +26,8 @@ public class DestructibleProp : MonoBehaviour, IDamageable
 
     public void OnTakeDamage(float ammount)
     {
-        health -= ammount;
+        health -= 1;
+        Debug.Log("safe " + health);
         if (health <= 0)
         {
             OnExplode();
