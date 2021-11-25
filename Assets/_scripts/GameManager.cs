@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour, IScreen
 
     public static int TOTAL_VICTIMS = 0;
 
+    void OnLevelWasLoaded(int level)
+    {
+        //if (level == 13)
+        Debug.Log("On level loaded " + level);
+
+    }
+
     private void Awake()
     {
         _instance = this;
@@ -30,7 +37,6 @@ public class GameManager : MonoBehaviour, IScreen
 
         EventManager.SubscribeToEvent(Constants.ON_WIN_CONDITION, WinScreenDisplay);
         EventManager.SubscribeToEvent(Constants.ON_DEFEAT_CONDITION, DefeatScreenDisplay);
-
 
         TOTAL_VICTIMS = 0;
 

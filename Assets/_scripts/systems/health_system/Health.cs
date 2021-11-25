@@ -67,6 +67,10 @@ public class Health
     {
         return currentHealth / maxHealth;
     }
+    public float GetHealth()
+    {
+        return currentHealth;
+    }
     public void TakeDamage(float dmgAmount)
     {
         this.currentHealth -= dmgAmount;

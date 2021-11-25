@@ -9,6 +9,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
     public Health HealthSystem;
     [SerializeField]
     private float health = 100;
+    public float Health { get => (HealthSystem != null? HealthSystem.GetHealth() : health); }
 
     [SerializeField] protected HealthBar health_bar;
     [SerializeField] protected Animator m_animator;
@@ -83,4 +84,6 @@ public abstract class Entity : MonoBehaviour, IDamageable
     {
         throw new System.NotImplementedException();
     }
+
+
 }
