@@ -21,12 +21,11 @@ public class GameManager : MonoBehaviour, IScreen
     public Transform player;
 
     public static int TOTAL_VICTIMS = 0;
+    public int LoadedLevel = 0;
 
     void OnLevelWasLoaded(int level)
     {
-        //if (level == 13)
-        Debug.Log("On level loaded " + level);
-
+        LoadedLevel = level;
     }
 
     private void Awake()

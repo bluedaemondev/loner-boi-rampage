@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 4021917401902568948}
   - component: {fileID: 4021917401902568949}
   - component: {fileID: 3577934622683738589}
+  - component: {fileID: -1321395268794505137}
   m_Layer: 0
   m_Name: SafeBonus
   m_TagString: Untagged
@@ -283,9 +284,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  dropCount: 2
   particlesDamage: {fileID: 0}
   piecePrefab: {fileID: 5964383425386495789, guid: 45755053b78154b4b8592b698c73de74,
     type: 3}
+  _destroy: 0
 --- !u!65 &3577934622683738589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -299,6 +302,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1272305, y: 1.7786486, z: 1}
   m_Center: {x: -0.012767147, y: -0.015974922, z: 0}
+--- !u!95 &-1321395268794505137
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021917401902568950}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4021917402042033509
 GameObject:
   m_ObjectHideFlags: 0

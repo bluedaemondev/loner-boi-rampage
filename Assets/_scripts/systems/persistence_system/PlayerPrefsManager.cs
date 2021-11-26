@@ -16,14 +16,16 @@ public class PlayerPrefsManager : MonoBehaviour
     public string literalPath = "";
     public string filename = ".data.s";
 
-    private IEnumerator OnLevelWasLoaded(int level)
-    {
-        yield return StartCoroutine(LoadPrefsFile<Prefs>());
-        EventManager.ExecuteEvent(Constants.ON_LOAD_PREFS, prefUser);
-    }
     private void Awake()
     {
-        
+        StartCoroutine( GetFileLoad());
+        print(GetFileName());
+    }
+    private IEnumerator GetFileLoad()
+    {
+        Debug.Log("logg");
+        yield return StartCoroutine(LoadPrefsFile<Prefs>());
+        EventManager.ExecuteEvent(Constants.ON_LOAD_PREFS, prefUser);
     }
 
     public string GetFileName()
@@ -86,6 +88,7 @@ public class Prefs
 {
     public List<LevelPrefs> levelData;
     public ConfigPrefs configs;
+    public Language language;
 }
 
 public class LevelPrefs

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Button = UnityEngine.UI.Button;
 
 public class PauseScreen : MonoBehaviour, IScreen
@@ -8,6 +9,11 @@ public class PauseScreen : MonoBehaviour, IScreen
     [SerializeField]
     Button[] content;
 
+    public void ExitGame()
+    {
+        this.Deactivate();
+        SceneManager.LoadScene(Constants.MAIN_MENU_BUILD_IDX);
+    }
     public void Activate()
     {
         foreach (var item in content)
