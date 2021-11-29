@@ -11,6 +11,15 @@ using UnityEngine;
 /// </summary>
 public class PlayerPrefsManager : MonoBehaviour
 {
+    public static PlayerPrefsManager Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    private static PlayerPrefsManager _instance;
     public Prefs prefUser;
 
     public string folderPath = "";
@@ -18,6 +27,14 @@ public class PlayerPrefsManager : MonoBehaviour
 
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(_instance);
+        }
+
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
         StartCoroutine(GetFileLoad());
     }
     private IEnumerator GetFileLoad()

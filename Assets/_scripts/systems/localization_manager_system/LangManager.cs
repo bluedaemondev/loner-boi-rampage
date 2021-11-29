@@ -20,7 +20,7 @@ public class LangManager : MonoBehaviour
         }
     }
 
-    static LangManager _instance;
+    private static LangManager _instance;
 
     //Enum para saber en que idioma se va a ejecutar en un principio
     public Language? selectedLanguage;
@@ -40,6 +40,7 @@ public class LangManager : MonoBehaviour
         }
 
         _instance = this;
+        DontDestroyOnLoad(this.gameObject);
 
         StartCoroutine(DownloadCSV(externalURL)); //Bajamos el archivo de inet
     }
@@ -60,7 +61,7 @@ public class LangManager : MonoBehaviour
         else if (languageManager != null)
             return languageManager[selectedLanguage ?? defaultLanguage][id];
         else
-            return "Lang manager not available";
+            return string.Empty;
     }
 
     /// <summary>

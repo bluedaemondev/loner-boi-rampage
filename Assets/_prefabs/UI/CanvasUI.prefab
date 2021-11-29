@@ -271,7 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a8f35ba93657b4abc9a5d199771d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: []
   pauseWindowContainer: {fileID: 0}
 --- !u!1 &4806095252779745483
 GameObject:
@@ -1414,7 +1413,7 @@ PrefabInstance:
     - target: {fileID: 8212533756869703825, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -844.30005
+      value: -751.32
       objectReference: {fileID: 0}
     - target: {fileID: 8212533756869703825, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}
@@ -1424,7 +1423,7 @@ PrefabInstance:
     - target: {fileID: 8212533756869703825, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 252.8
+      value: 438.77
       objectReference: {fileID: 0}
     - target: {fileID: 8212533756869703825, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}
@@ -1465,6 +1464,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BiyuyaCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212533757637869146, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
+        type: 3}
+      propertyPath: m_Name
+      value: cash display
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212533757637869148, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
+        type: 3}
+      propertyPath: id
+      value: ID_Cash
       objectReference: {fileID: 0}
     - target: {fileID: 8212533757637869149, guid: 7e92e6a2ed7dcb04497e45fafbf1a80a,
         type: 3}

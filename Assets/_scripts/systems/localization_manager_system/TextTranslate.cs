@@ -19,8 +19,14 @@ public class TextTranslate : MonoBehaviour
     {
         print("Translating " + this.name);
 
-        if (LangManager.Instance != null)
-            myView.text = LangManager.Instance.GetTranslate(ID);
+        if (LangManager.Instance)
+        {
+            string trns = LangManager.Instance.GetTranslate(ID);
+            this.myView.text = trns != string.Empty ? trns : myView.text;
+        }
+
+        //if (LangManager.Instance != null)
+        //    myView.text = LangManager.Instance.GetTranslate(ID);
     }
     IEnumerator AwaitCodexTranslate()
     {
