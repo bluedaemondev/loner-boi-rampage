@@ -13,7 +13,7 @@ public class PlayerPrefsManager : MonoBehaviour
 {
     public Prefs prefUser;
 
-    public string literalPath = "";
+    public string folderPath = "";
     public string filename = ".data.s";
 
     private void Awake()
@@ -32,7 +32,7 @@ public class PlayerPrefsManager : MonoBehaviour
     }
     public string GetFileDirectory()
     {
-        return Path.Combine(Application.persistentDataPath, literalPath); 
+        return Path.Combine(Application.persistentDataPath, folderPath); 
     }
 
     IEnumerator LoadPrefsFile<T>() 
@@ -111,6 +111,7 @@ public class PlayerPrefsManager : MonoBehaviour
     }
 
 }
+
 [System.Serializable]
 public class Prefs 
 {
