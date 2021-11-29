@@ -14,7 +14,7 @@ public class PointsManager : MonoBehaviour
 
     static PointsManager _instance;
 
-    private int totalPoints;
+    public int TotalPoints { get; private set; }
     private int maxPointsPref;
 
     // bulletsShot-killerBullets
@@ -65,7 +65,7 @@ public class PointsManager : MonoBehaviour
 
     private void AddPoints(params object[] vs)
     {
-        this.totalPoints += (int)vs[0];
+        this.TotalPoints += (int)vs[0];
     }
     private void AddBulletShot(params object[] vs)
     {
