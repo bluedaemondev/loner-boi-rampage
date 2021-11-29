@@ -18,27 +18,40 @@ public class PlayerPrefsManager : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine( GetFileLoad());
-        print(GetFileName());
+        StartCoroutine(GetFileLoad());
     }
     private IEnumerator GetFileLoad()
     {
-        Debug.Log("logg");
         yield return StartCoroutine(LoadPrefsFile<Prefs>());
         EventManager.ExecuteEvent(Constants.ON_LOAD_PREFS, prefUser);
     }
 
     public string GetFileName()
     {
-        return string.Format(Application.persistentDataPath, "\\", literalPath, "\\", filename);
+        return Path.Combine(GetFileDirectory(), filename); 
     }
-    
-    
+    public string GetFileDirectory()
+    {
+        return Path.Combine(Application.persistentDataPath, literalPath); 
+    }
+
+
     IEnumerator LoadPrefsFile<T>() 
     {
         if (!File.Exists(GetFileName()))
         {
             this.prefUser = new Prefs();
+
+             this.prefUser.levelData = new List<LevelPrefs>();
+            // this.prefUser.configs
+            prefUser.levelData.Add(
+                new LevelPrefs
+                {
+                    level = 0,
+                    bestTime = 0,
+                    maxAccuracy = 0,
+                    maxPoints = 0
+                });
 
             yield return SavePrefs(prefUser);
 
@@ -71,26 +84,54 @@ public class PlayerPrefsManager : MonoBehaviour
     {
         try
         {
+            DirectoryInfo dir = new DirectoryInfo(GetFileDirectory());
+            if (!dir.Exists)
+                dir.Create();
+
+            if(dir.Attributes.HasFlag(FileAttributes.ReadOnly))
+            {
+                dir.Attributes ^= FileAttributes.ReadOnly;
+            }
+            if (!File.Exists(GetFileName()))
+            {
+                File.Create(GetFileName()).Dispose();
+            }
+
             StreamWriter _sWriter = new StreamWriter(GetFileName());
+
+            Debug.Log(JsonUtility.ToJson(newPrefs, true));
             _sWriter.Write(JsonUtility.ToJson(newPrefs, true));
             _sWriter.Dispose();
         }
         catch (System.Exception exe)
         {
-            Debug.LogError(exe.Data);
+            Debug.LogError(exe.Message);
         }
 
         yield return null;
     }
 
 }
+[System.Serializable]
 public class Prefs 
 {
     public List<LevelPrefs> levelData;
     public ConfigPrefs configs;
     public Language language;
+
+    public Prefs()
+    {
+        this.levelData = new List<LevelPrefs>();
+        this.configs = new ConfigPrefs
+        {
+            sfxLevel = 100,
+            isImplemented = false
+        };
+        this.language = Language.spa;
+    }
 }
 
+[System.Serializable]
 public class LevelPrefs
 {
     public int level;
@@ -99,6 +140,8 @@ public class LevelPrefs
     public float maxAccuracy;
 
 }
+
+[System.Serializable]
 public class ConfigPrefs
 {
     public float sfxLevel = 100;

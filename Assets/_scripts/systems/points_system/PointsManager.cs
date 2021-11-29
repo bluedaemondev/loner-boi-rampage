@@ -59,7 +59,8 @@ public class PointsManager : MonoBehaviour
 
     private void SetMaxPoints(params object[] vs)
     {
-        this.maxPointsPref = ((Prefs)vs[1]).levelData[0].maxPoints;
+        if(((Prefs)vs[0]).levelData != default)
+            this.maxPointsPref = ((Prefs)vs[0]).levelData[0].maxPoints;
     }
 
     private void AddPoints(params object[] vs)
