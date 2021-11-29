@@ -35,7 +35,6 @@ public class PlayerPrefsManager : MonoBehaviour
         return Path.Combine(Application.persistentDataPath, literalPath); 
     }
 
-
     IEnumerator LoadPrefsFile<T>() 
     {
         if (!File.Exists(GetFileName()))
