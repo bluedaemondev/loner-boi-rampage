@@ -15,11 +15,12 @@ public class UnityAdsManager : MonoBehaviour
         }
     }
 
-    [SerializeField]
+    //[SerializeField]
     private string ad_identifier_android = "4479229";
-    [SerializeField]
+    //[SerializeField]
     private string ad_identifier_ios = "4479228";
-    public string _gameId;
+    
+    private string _gameId;
 
     private void Awake()
     {

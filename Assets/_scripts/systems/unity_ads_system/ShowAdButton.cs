@@ -14,18 +14,18 @@ public class ShowAdButton : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _btn = GetComponent<Button>();
         switch (_type) {
             case AdType.Banner:
-                DisplayBannerAd();
+                _btn.onClick.AddListener(DisplayBannerAd);
                 break;
             case AdType.Interstitial:
-                DisplayInterstitialAd();
+                _btn.onClick.AddListener(DisplayInterstitialAd);
                 break;
             case AdType.RewardedInterstitial:
-                DisplayRewardedAd();
+                _btn.onClick.AddListener(DisplayRewardedAd);
                 break;
         }
 
