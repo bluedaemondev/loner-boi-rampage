@@ -5,8 +5,8 @@ using UnityEngine.Advertisements;
 
 public class RewardedAdScreen : MonoBehaviour, IScreen
 {
-    private string ad_unit_id_android = "Rewarded_Android";
-    private string ad_unit_id_ios = "Rewarded_iOS";
+    private string ad_unit_id_android = "Interstitial_Android";
+    private string ad_unit_id_ios = "Interstitial_iOS";
 
     private string unit_id;
 
@@ -42,6 +42,15 @@ public class RewardedAdScreen : MonoBehaviour, IScreen
     private void LoadAd()
     {
         Debug.Log("Loading Ad: " + unit_id);
+        StartCoroutine(LoadAdDeferred());
+    }
+    private IEnumerator LoadAdDeferred()
+    {
+        while (!Advertisement.IsReady(unit_id))
+        {
+            yield return null;
+        }
+        Debug.Log("Done loading " + unit_id);
         Advertisement.Show(unit_id, new ShowOptions { resultCallback = CheckResult });
     }
     private void CheckResult (ShowResult callbackResult)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
+
 public class UnityAdsManager : MonoBehaviour
 {
     private static UnityAdsManager _instance;
@@ -36,6 +37,6 @@ public class UnityAdsManager : MonoBehaviour
             ? ad_identifier_ios
             : ad_identifier_android;
 
-        Advertisement.Initialize(_gameId);
+        Advertisement.Initialize(_gameId, true);
     }
 }
