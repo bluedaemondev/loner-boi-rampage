@@ -48,20 +48,20 @@ public class PlayerPrefsManager : MonoBehaviour
 
     public string GetFileName()
     {
-        return Path.Combine(GetFileDirectory(), filename); 
+        return Path.Combine(GetFileDirectory(), filename);
     }
     public string GetFileDirectory()
     {
-        return Path.Combine(Application.persistentDataPath, folderPath); 
+        return Path.Combine(Application.persistentDataPath, folderPath);
     }
 
-    IEnumerator LoadPrefsFile<T>() 
+    IEnumerator LoadPrefsFile<T>()
     {
         if (!File.Exists(GetFileName()))
         {
             this.prefUser = new Prefs();
 
-             this.prefUser.levelData = new List<LevelPrefs>();
+            this.prefUser.levelData = new List<LevelPrefs>();
             // this.prefUser.configs
             prefUser.levelData.Add(
                 new LevelPrefs
@@ -77,7 +77,7 @@ public class PlayerPrefsManager : MonoBehaviour
             yield break;
         }
 
-        try 
+        try
         {
             StreamReader _sReader = new StreamReader(GetFileName());
 
@@ -86,19 +86,19 @@ public class PlayerPrefsManager : MonoBehaviour
             _sReader.Dispose();
 
             Debug.Log(fileEnum);
-            
-            JsonUtility.FromJsonOverwrite(fileEnum, this.prefUser); 
+
+            this.prefUser = JsonUtility.FromJson<Prefs>(fileEnum);
             // hecho con alambre hasta que agregue las config
 
-        } 
-        catch(System.Exception exe)
+        }
+        catch (System.Exception exe)
         {
             Debug.LogError(exe.Data);
         }
 
         yield return null;
 
-        
+
     }
 
     public IEnumerator SavePrefs<T>()
@@ -109,13 +109,13 @@ public class PlayerPrefsManager : MonoBehaviour
             if (!dir.Exists)
                 dir.Create();
 
-            if(dir.Attributes.HasFlag(FileAttributes.ReadOnly))
+            if (dir.Attributes.HasFlag(FileAttributes.ReadOnly))
             {
                 dir.Attributes ^= FileAttributes.ReadOnly;
             }
-            if (!File.Exists(GetFileName()))
+            if (File.Exists(GetFileName()))
             {
-                File.Create(GetFileName()).Dispose();
+                File.Delete(GetFileName());
             }
 
             StreamWriter _sWriter = new StreamWriter(GetFileName());
@@ -136,7 +136,7 @@ public class PlayerPrefsManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class Prefs 
+public class Prefs
 {
     public List<LevelPrefs> levelData;
     public ConfigPrefs configs;

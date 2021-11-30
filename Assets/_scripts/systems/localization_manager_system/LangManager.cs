@@ -73,7 +73,7 @@ public class LangManager : MonoBehaviour
 
         onUpdate();
         PlayerPrefsManager.Instance.prefUser.language = selectedLanguage.Value;
-        Debug.Log("Update " + PlayerPrefsManager.Instance.prefUser.language);
+        //Debug.Log("Update " + PlayerPrefsManager.Instance.prefUser.language);
 
 
     }

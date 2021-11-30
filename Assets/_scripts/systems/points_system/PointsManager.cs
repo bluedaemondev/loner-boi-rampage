@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class PointsManager : MonoBehaviour
             return _instance;
         }
     }
+
+    
 
     static PointsManager _instance;
 
@@ -25,13 +28,13 @@ public class PointsManager : MonoBehaviour
     public float Accuracy { get { return killerBullets * 100 / Mathf.Max(1 , bulletsShot); } }
     public float AccuracyBonus { get { return Accuracy * pointsAddedByAccuracy; } }
     public float HealthBonus { get { return pointsBonusHealth * Entity.Player.Health; } }
-    public float TimeBonus { get {return Mathf.Min(basePointsTime - (timeSinceLevelLoad * pointsSubstractedByTime), 0); } }
-    public float DestructionBonus { get { return Mathf.Min(basePointsTime - (timeSinceLevelLoad * pointsSubstractedByTime), 0); } }
+    public float TimeBonus { get {return Mathf.Min(basePointsTime - (TimeSinceLevelLoad * pointsSubstractedByTime), 0); } }
+    public float DestructionBonus { get { return Mathf.Min(basePointsTime - (TimeSinceLevelLoad * pointsSubstractedByTime), 0); } }
 
 
-    private float timeSinceLevelLoad = 0;
+    public float TimeSinceLevelLoad { get; private set; }
     private float pointsAddedByAccuracy = 5;
-    private float pointsSubstractedByTime = 2;
+    private float pointsSubstractedByTime = 0.2f;
     private float pointsBonusHealth = 5;
     private float basePointsTime = 2000;
 
@@ -48,7 +51,7 @@ public class PointsManager : MonoBehaviour
     
     private void Update()
     {
-        timeSinceLevelLoad += Time.deltaTime;
+        TimeSinceLevelLoad += Time.deltaTime;
     }
     void Start()
     {
@@ -57,6 +60,10 @@ public class PointsManager : MonoBehaviour
         EventManager.SubscribeToEvent(Constants.ON_GUN_SHOOT, this.AddBulletShot);
     }
 
+    public float GetTotal()
+    {
+        return this.AccuracyBonus + this.HealthBonus + this.DestructionBonus + this.TimeBonus + TotalPoints;
+    }
     private void SetMaxPoints(params object[] vs)
     {
         if(((Prefs)vs[0]).levelData != default)

@@ -17,7 +17,7 @@ public class SavePrefsButtonUI : MonoBehaviour
     {
         if (_deactivate)
             _btn.interactable = false;
-        
+
         PlayerPrefsManager.Instance.StartCoroutine(PlayerPrefsManager.Instance.SavePrefs<Prefs>());
     }
 }

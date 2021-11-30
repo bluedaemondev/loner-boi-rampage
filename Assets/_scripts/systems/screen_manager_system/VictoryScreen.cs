@@ -19,7 +19,7 @@ public class VictoryScreen : MonoBehaviour, IScreen
 
     public void Deactivate()
     {
-        Debug.Log("Victory end");
+        //Debug.Log("Victory end");
     }
 
     public string Free()
