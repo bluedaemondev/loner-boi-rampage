@@ -1,23 +1,17 @@
 ﻿using UnityEngine;
 using Button = UnityEngine.UI.Button;
 
-public enum AdType { 
-    Interstitial,
-    RewardedInterstitial,
-    Banner
-}
-
 public class ShowAdButton : MonoBehaviour
 {
     [SerializeField] AdType _type;
     private Button _btn;
+    [SerializeField] bool _deactivateOnPress = true;
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         _btn = GetComponent<Button>();
-        switch (_type) {
+        switch (_type)
+        {
             case AdType.Banner:
                 _btn.onClick.AddListener(DisplayBannerAd);
                 break;
@@ -29,20 +23,30 @@ public class ShowAdButton : MonoBehaviour
                 break;
         }
 
+        if (_deactivateOnPress)
+            _btn.onClick.AddListener(DeactivateButton);
+
     }
+    void DeactivateButton()
+    {
+        this._btn.interactable = false;
+    }
+
     void DisplayInterstitialAd()
     {
         ScreenManager.Instance.Push("Interstitial_Screen");
     }
+
     void DisplayBannerAd()
     {
         //UnityAdsManager.Instance.ShowBanner();
-        Debug.Log("Display banner ad in screen"); 
+        Debug.Log("Display banner ad in screen");
 
     }
+
     void DisplayRewardedAd()
     {
-        ScreenManager.Instance.Push("Rewarded_Interstitial_Screen");
-
+        //ScreenManager.Instance.Push("Rewarded_Interstitial_Screen");
+        Debug.Log("Rewarded interstitial Placeholder");
     }
 }

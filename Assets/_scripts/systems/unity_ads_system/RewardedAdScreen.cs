@@ -24,13 +24,11 @@ public class RewardedAdScreen : MonoBehaviour, IScreen
     public void Activate()
     {
         LoadAd();
-        //throw new System.NotImplementedException();
     }
 
     public void Deactivate()
     {
-
-        //throw new System.NotImplementedException();
+        ScreenManager.Instance.Pop();
     }
 
     public string Free()
@@ -65,7 +63,7 @@ public class RewardedAdScreen : MonoBehaviour, IScreen
             case ShowResult.Skipped:
                 Debug.Log("skipped ad");
                 // si skippea , +0.5
-                EventManager.ExecuteEvent(Constants.ON_GET_POINTS, PointsManager.Instance.TotalPoints / 2);
+                EventManager.ExecuteEvent(Constants.ON_GET_POINTS, Mathf.FloorToInt(PointsManager.Instance.TotalPoints / 2f));
 
                 break;
             case ShowResult.Failed:
