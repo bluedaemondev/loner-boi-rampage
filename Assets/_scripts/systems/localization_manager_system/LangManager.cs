@@ -24,7 +24,7 @@ public class LangManager : MonoBehaviour
 
     //Enum para saber en que idioma se va a ejecutar en un principio
     public Language? selectedLanguage;
-    public Language defaultLanguage = Language.eng;
+    public Language defaultLanguage;
 
     public Dictionary<Language, Dictionary<string, string>> languageManager;
 
@@ -34,17 +34,36 @@ public class LangManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null)
+        if (_instance == null)
         {
-            Destroy(_instance);
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
 
         StartCoroutine(DownloadCSV(externalURL)); //Bajamos el archivo de inet
     }
+    private void Start()
+    {
+        EventManager.SubscribeToEvent(Constants.ON_LOAD_PREFS, LoadPreexistingData);
+    }
 
+    private void LoadPreexistingData(params object[] data)
+    {
+
+        defaultLanguage = ((Prefs)data[0]).language;
+        selectedLanguage = ((Prefs)data[0]).language;
+
+        Debug.Log(selectedLanguage.ToString());
+        //TranslateUpdate();
+    }
+
+    /// <summary>
+    /// Editor method - change language
+    /// </summary>
     public void TranslateUpdate()
     {
         if (selectedLanguage == Language.eng)
@@ -53,6 +72,10 @@ public class LangManager : MonoBehaviour
             selectedLanguage = Language.eng;
 
         onUpdate();
+        PlayerPrefsManager.Instance.prefUser.language = selectedLanguage.Value;
+        Debug.Log("Update " + PlayerPrefsManager.Instance.prefUser.language);
+
+
     }
     public string GetTranslate(string id)
     {
@@ -78,6 +101,7 @@ public class LangManager : MonoBehaviour
 
         languageManager = LanguageU.LoadCodexFromString("www", www.downloadHandler.text);
 
-        onUpdate();
+        //if (selectedLanguage != PlayerPrefsManager.Instance.prefUser.language)
+            onUpdate();
     }
 }

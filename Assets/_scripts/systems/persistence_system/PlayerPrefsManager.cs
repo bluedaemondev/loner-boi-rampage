@@ -27,19 +27,22 @@ public class PlayerPrefsManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null)
+        if (_instance == null)
         {
-            Destroy(_instance);
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
 
         StartCoroutine(GetFileLoad());
     }
     private IEnumerator GetFileLoad()
     {
         yield return StartCoroutine(LoadPrefsFile<Prefs>());
+
         EventManager.ExecuteEvent(Constants.ON_LOAD_PREFS, prefUser);
     }
 
@@ -69,7 +72,7 @@ public class PlayerPrefsManager : MonoBehaviour
                     maxPoints = 0
                 });
 
-            yield return SavePrefs(prefUser);
+            yield return SavePrefs<Prefs>();
 
             yield break;
         }
@@ -81,8 +84,10 @@ public class PlayerPrefsManager : MonoBehaviour
             string fileEnum = _sReader.ReadToEnd();
 
             _sReader.Dispose();
+
+            Debug.Log(fileEnum);
             
-            this.prefUser = JsonUtility.FromJson<Prefs>(fileEnum); 
+            JsonUtility.FromJsonOverwrite(fileEnum, this.prefUser); 
             // hecho con alambre hasta que agregue las config
 
         } 
@@ -96,7 +101,7 @@ public class PlayerPrefsManager : MonoBehaviour
         
     }
 
-    public IEnumerator SavePrefs<T>(T newPrefs)
+    public IEnumerator SavePrefs<T>()
     {
         try
         {
@@ -115,8 +120,9 @@ public class PlayerPrefsManager : MonoBehaviour
 
             StreamWriter _sWriter = new StreamWriter(GetFileName());
 
-            Debug.Log(JsonUtility.ToJson(newPrefs, true));
-            _sWriter.Write(JsonUtility.ToJson(newPrefs, true));
+            Debug.Log(JsonUtility.ToJson(this.prefUser, true));
+
+            _sWriter.Write(JsonUtility.ToJson(this.prefUser, true));
             _sWriter.Dispose();
         }
         catch (System.Exception exe)
@@ -144,7 +150,6 @@ public class Prefs
             sfxLevel = 100,
             isImplemented = false
         };
-        this.language = Language.spa;
     }
 }
 

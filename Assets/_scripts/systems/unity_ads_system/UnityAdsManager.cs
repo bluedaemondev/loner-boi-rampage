@@ -25,14 +25,16 @@ public class UnityAdsManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance != null)
+        if (_instance == null)
         {
-            Destroy(_instance);
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
         }
 
-        _instance = this;
-        DontDestroyOnLoad(this.gameObject);
-        
         _gameId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? ad_identifier_ios
             : ad_identifier_android;

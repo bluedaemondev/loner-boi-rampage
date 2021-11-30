@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour, IScreen
     }
     private void Start()
     {
+        if (PlayerPrefsManager.Instance.prefUser.levelData.Find(lvl => lvl.level == LoadedLevel) == null)
+            PlayerPrefsManager.Instance.prefUser.levelData.Add(new LevelPrefs { level = LoadedLevel });
+
         ScreenManager.Instance.Push(this);
     }
 

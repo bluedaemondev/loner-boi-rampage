@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e4182531dec394e82a826510154adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultLanguage: 1
+  defaultLanguage: 0
   externalURL: https://docs.google.com/spreadsheets/d/e/2PACX-1vQnrW6J4o5eliDhS3AZds4bV-5vk1PD68qrjucb4njUAAYkIdXIZPgwgavQSjDqzdq4a88tATvXyuqI/pub?output=csv
 --- !u!4 &144484562
 Transform:
@@ -10650,6 +10650,7 @@ GameObject:
   - component: {fileID: 2100010869}
   - component: {fileID: 2100010868}
   - component: {fileID: 2100010867}
+  - component: {fileID: 2100010870}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -10767,6 +10768,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100010865}
   m_CullTransparentMesh: 0
+--- !u!114 &2100010870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100010865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ece98a2281d15b458bc1f4b41d19f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deactivate: 0
 --- !u!1 &2127903211
 GameObject:
   m_ObjectHideFlags: 0
@@ -10981,6 +10995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 6453509106722809198, guid: ad0e40b0107bbf04cada02da3eafccd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6453509107241703212, guid: ad0e40b0107bbf04cada02da3eafccd2,
         type: 3}
