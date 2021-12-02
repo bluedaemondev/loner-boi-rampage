@@ -26769,6 +26769,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 752402851}
+    - target: {fileID: 4806095253156224830, guid: 808296515efbe704c8b9067f13dc58e2,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 664d6d9ba1b52624787379192147d824,
+        type: 3}
     - target: {fileID: 4806095253433580211, guid: 808296515efbe704c8b9067f13dc58e2,
         type: 3}
       propertyPath: m_Type
@@ -26779,6 +26785,33 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 752402851}
+    - target: {fileID: 4806095254197769897, guid: 808296515efbe704c8b9067f13dc58e2,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 664d6d9ba1b52624787379192147d824,
+        type: 3}
+    - target: {fileID: 4806095254197769897, guid: 808296515efbe704c8b9067f13dc58e2,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806095254197769897, guid: 808296515efbe704c8b9067f13dc58e2,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806095254197769897, guid: 808296515efbe704c8b9067f13dc58e2,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806095254210851041, guid: 808296515efbe704c8b9067f13dc58e2,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 664d6d9ba1b52624787379192147d824,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808296515efbe704c8b9067f13dc58e2, type: 3}
 --- !u!1001 &4827625810349916832
@@ -26796,22 +26829,22 @@ PrefabInstance:
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.42519104
+      value: 0.42519274
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.085445955
+      value: 0.085407026
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04036057
+      value: -0.040342182
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90015703
+      value: 0.90016073
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192646, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -26826,22 +26859,22 @@ PrefabInstance:
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.42519104
+      value: 0.42519274
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.085445955
+      value: 0.085407026
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04036057
+      value: -0.040342182
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90015703
+      value: 0.90016073
       objectReference: {fileID: 0}
     - target: {fileID: 4993799011345860844, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}

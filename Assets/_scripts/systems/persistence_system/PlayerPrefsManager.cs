@@ -37,6 +37,9 @@ public class PlayerPrefsManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+
+        prefUser = new Prefs();
+
         StartCoroutine(GetFileLoad());
     }
     private IEnumerator GetFileLoad()
@@ -72,7 +75,7 @@ public class PlayerPrefsManager : MonoBehaviour
                     maxPoints = 0
                 });
 
-            yield return SavePrefs<Prefs>();
+            //yield return SavePrefs<Prefs>();
 
             yield break;
         }
@@ -113,10 +116,11 @@ public class PlayerPrefsManager : MonoBehaviour
             {
                 dir.Attributes ^= FileAttributes.ReadOnly;
             }
-            if (File.Exists(GetFileName()))
-            {
-                File.Delete(GetFileName());
-            }
+            //if (File.Exists(GetFileName()))
+            //{
+            //    File.Delete(GetFileName());
+
+            //}
 
             StreamWriter _sWriter = new StreamWriter(GetFileName());
 

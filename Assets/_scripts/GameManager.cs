@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,8 +45,15 @@ public class GameManager : MonoBehaviour, IScreen
     }
     private void Start()
     {
+        try { 
         if (PlayerPrefsManager.Instance.prefUser.levelData.Find(lvl => lvl.level == LoadedLevel) == null)
             PlayerPrefsManager.Instance.prefUser.levelData.Add(new LevelPrefs { level = LoadedLevel });
+        }
+        catch (Exception exe)
+        {
+            Debug.Log(exe.Data);
+            PlayerPrefsManager.Instance.prefUser = new Prefs();
+        }
 
         ScreenManager.Instance.Push(this);
     }
