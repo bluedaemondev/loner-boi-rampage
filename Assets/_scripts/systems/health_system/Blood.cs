@@ -8,7 +8,7 @@ public class Blood : MonoBehaviour
 
     private void OnParticleSystemStopped()
     {
-        Debug.Log("returning " + this.name);
+        //Debug.Log("returning " + this.name);
         BloodFactory.Instance.ReturnBlood(this);
     }
 

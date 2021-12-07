@@ -70,7 +70,7 @@ public class PlayerPrefsManager : MonoBehaviour
                 new LevelPrefs
                 {
                     level = 0,
-                    bestTime = 0,
+                    bestTime = float.MaxValue,
                     maxAccuracy = 0,
                     maxPoints = 0
                 });

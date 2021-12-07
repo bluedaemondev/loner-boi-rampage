@@ -9,13 +9,14 @@ public class SavePointsProfileButtonUI : MonoBehaviour
     private void Awake()
     {
         _btn = GetComponent<Button>();
+        //_btn.onClick.AddListener(SaveLevelData);
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        _btn.onClick.AddListener(SaveLevelData);    
-    }
-    void SaveLevelData()
+    //void Start()
+    //{
+            
+    //}
+    public void SaveLevelData()
     {
         int currentLevelIndex = PlayerPrefsManager.Instance.prefUser.levelData.FindIndex(lvl => lvl.level == GameManager.Instance.LoadedLevel);
 
@@ -23,7 +24,7 @@ public class SavePointsProfileButtonUI : MonoBehaviour
         PlayerPrefsManager.Instance.prefUser.levelData[currentLevelIndex].bestTime = Mathf.Min(PlayerPrefsManager.Instance.prefUser.levelData[currentLevelIndex].bestTime, PointsManager.Instance.TimeSinceLevelLoad);
         PlayerPrefsManager.Instance.prefUser.levelData[currentLevelIndex].maxPoints = Mathf.Max(PlayerPrefsManager.Instance.prefUser.levelData[currentLevelIndex].maxPoints, (int)PointsManager.Instance.GetTotal());
 
-        PlayerPrefsManager.Instance.SavePrefs<Prefs>();
+        PlayerPrefsManager.Instance.StartCoroutine(PlayerPrefsManager.Instance.SavePrefs<Prefs>());
 
     }
 }

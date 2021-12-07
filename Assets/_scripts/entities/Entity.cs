@@ -37,8 +37,7 @@ public abstract class Entity : MonoBehaviour, IDamageable
     public static void DestroyEntity(Entity e)
     {
         GameManager.TOTAL_VICTIMS--;
-
-        //Debug.Log(GameManager.TOTAL_VICTIMS);
+        EventManager.ExecuteEvent(Constants.ON_VICTIM_DEAD);
 
         if (GameManager.TOTAL_VICTIMS == 0)
         {

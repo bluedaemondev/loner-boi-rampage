@@ -20,7 +20,7 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pickup on pickup! PIKA PIKA PIKA");
+        //Debug.Log("Pickup on pickup! PIKA PIKA PIKA");
         this.pickupStrategy.SetGrabber(other.gameObject);
         this.pickupStrategy.OnGrabPickup();
         DropFactory.Instance.pool.ReturnObject(this);

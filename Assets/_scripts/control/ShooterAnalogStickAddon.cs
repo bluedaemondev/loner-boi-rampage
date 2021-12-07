@@ -54,7 +54,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
     {
         while (true)
         {
-            Debug.Log("fire loop active , " + onShootEvent != null);
+            //Debug.Log("fire loop active , " + onShootEvent != null);
             yield return gunShotWaiter;
 
             FireGun();

@@ -15,6 +15,7 @@ public class PauseButton : MonoBehaviour
     }
     public void UnpauseGame()
     {
+        Time.timeScale = 1;
         ScreenManager.Instance.lastResult = "Back";
         ScreenManager.Instance.Pop();
     }

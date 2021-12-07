@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour, IScreen
     {
         try { 
         if (PlayerPrefsManager.Instance.prefUser.levelData.Find(lvl => lvl.level == LoadedLevel) == null)
-            PlayerPrefsManager.Instance.prefUser.levelData.Add(new LevelPrefs { level = LoadedLevel });
+            PlayerPrefsManager.Instance.prefUser.levelData.Add(new LevelPrefs { level = LoadedLevel, bestTime = float.MaxValue, maxAccuracy = -1, maxPoints = 0 });
         }
         catch (Exception exe)
         {

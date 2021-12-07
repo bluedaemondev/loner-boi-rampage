@@ -17,6 +17,8 @@ public class ReloadSceneButtonUI : MonoBehaviour
     {
         if (savePrefs)
             EventManager.ExecuteEvent(Constants.ON_SAVE_PREFS);
+
+        Time.timeScale = 1;
         
         SManager.LoadScene(SManager.GetActiveScene().buildIndex);
     }

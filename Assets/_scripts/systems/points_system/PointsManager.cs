@@ -58,6 +58,9 @@ public class PointsManager : MonoBehaviour
         EventManager.SubscribeToEvent(Constants.ON_LOAD_PREFS, this.SetMaxPoints);
         EventManager.SubscribeToEvent(Constants.ON_GET_POINTS, this.AddPoints);
         EventManager.SubscribeToEvent(Constants.ON_GUN_SHOOT, this.AddBulletShot);
+        EventManager.SubscribeToEvent(Constants.ON_VICTIM_DEAD, this.AddAccurateShot);
+
+
     }
 
     public float GetTotal()
@@ -78,7 +81,7 @@ public class PointsManager : MonoBehaviour
     {
         this.bulletsShot++;
     }
-    private void AddAccurateShot(params object[] vs)
+    public void AddAccurateShot(params object[] vs)
     {
         this.killerBullets++;
     }

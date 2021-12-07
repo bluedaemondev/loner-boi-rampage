@@ -1017,7 +1017,6 @@ GameObject:
   - component: {fileID: 7514514958456495261}
   - component: {fileID: 7514514958456495260}
   - component: {fileID: 306567619734509176}
-  - component: {fileID: 1534828687998103760}
   - component: {fileID: 7514514958456495259}
   m_Layer: 5
   m_Name: ButtonNext
@@ -1124,7 +1123,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7514514958456495261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 306567619734509176}
+        m_MethodName: SaveLevelData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7514514958456495259}
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &306567619734509176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,19 +1158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1f92de90ebb9f498b3c39d99f3477a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1534828687998103760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7514514958456495262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ece98a2281d15b458bc1f4b41d19f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deactivate: 1
 --- !u!114 &7514514958456495259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,6 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e06b96e6a349c42b4da41a1c23a510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLoad: 0
 --- !u!1 &7514514958800685201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1184,6 @@ GameObject:
   - component: {fileID: 7514514958800685212}
   - component: {fileID: 7514514958800685215}
   - component: {fileID: 6550071352216153449}
-  - component: {fileID: 2912124020708903454}
   - component: {fileID: 7514514958800685210}
   m_Layer: 5
   m_Name: ButtonMenu
@@ -1282,7 +1290,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7514514958800685212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6550071352216153449}
+        m_MethodName: SaveLevelData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7514514958800685210}
+        m_MethodName: MenuScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6550071352216153449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,19 +1325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1f92de90ebb9f498b3c39d99f3477a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2912124020708903454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7514514958800685201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ece98a2281d15b458bc1f4b41d19f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _deactivate: 1
 --- !u!114 &7514514958800685210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,6 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2679761c08f8ac04695b7027be82ca3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLoad: 0
 --- !u!1 &7514514958891344191
 GameObject:
   m_ObjectHideFlags: 0

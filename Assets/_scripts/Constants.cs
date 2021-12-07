@@ -9,6 +9,7 @@
 
     public const string ON_GET_POINTS = "Got biyuyed";
     public const string ON_WEAPON_CHANGE = "On set new player weapon/gun";
+    public const string ON_VICTIM_DEAD = "Player killed a victim";
 
     public const string ON_PLAYER_LEFT_ELEVATOR = "Player walked out of spawn";
     public const string ON_PLAYER_CLEARED_FLOOR = "Player cleared floor";

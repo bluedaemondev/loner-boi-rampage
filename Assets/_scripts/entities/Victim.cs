@@ -33,6 +33,7 @@ public class Victim : Entity
     protected virtual void Start()
     {
         GameManager.TOTAL_VICTIMS++;
+
         //Debug.Log(this.gameObject.name);
     }
 

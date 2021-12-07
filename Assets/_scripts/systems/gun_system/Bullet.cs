@@ -51,7 +51,9 @@ public class Bullet : MonoBehaviour
 
             blood = BloodFactory.Instance.pool.GetObject();
             blood.transform.position = closestPoint;
-            blood.transform.forward = (transform.position - closestPoint).normalized;
+
+            if((transform.position - closestPoint) != Vector3.zero)
+                blood.transform.forward = (transform.position - closestPoint).normalized;
 
             blood.GetComponent<ParticleSystem>().startColor = Color.yellow;
 

@@ -5,16 +5,18 @@ using SManager = UnityEngine.SceneManagement.SceneManager;
 public class MenuButtonUI : MonoBehaviour
 {
     Button button;
+    [SerializeField] bool autoLoad = true;
     private void Awake()
     {
         this.button = GetComponent<Button>();
-        this.button.onClick.AddListener(MenuScene);
+        if (autoLoad)
+            this.button.onClick.AddListener(MenuScene);
     }
 
-    private void MenuScene()
+    public void MenuScene()
     {
-        EventManager.ExecuteEvent(Constants.ON_SAVE_PREFS);
+        //EventManager.ExecuteEvent(Constants.ON_SAVE_PREFS);
 
-        SManager.LoadScene(0);
+        SManager.LoadScene(Constants.MAIN_MENU_BUILD_IDX);
     }
 }
