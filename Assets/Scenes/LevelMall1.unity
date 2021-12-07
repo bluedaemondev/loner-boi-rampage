@@ -171,7 +171,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &485304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 0}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &2732939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &74750143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2348,7 +2348,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &111430614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3741,7 +3741,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &278928901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6422,7 +6422,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!43 &570318129
 Mesh:
   m_ObjectHideFlags: 0
@@ -6799,7 +6799,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &586306794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9416,7 +9416,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &810208722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11349,7 +11349,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &844560113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16802,7 +16802,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &1431324929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19108,7 +19108,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &1661734032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20950,7 +20950,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &1869585750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21950,7 +21950,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &1903123434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22751,7 +22751,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &1990478493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24963,7 +24963,7 @@ MonoBehaviour:
   dropCount: 0
   particlesDamage: {fileID: 1755302431}
   piecePrefab: {fileID: 0}
-  _destroy: 0
+  _destroy: 1
 --- !u!65 &2138403207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26829,7 +26829,7 @@ PrefabInstance:
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.42519274
+      value: 0.42519268
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -26839,12 +26839,12 @@ PrefabInstance:
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040342182
+      value: -0.040342174
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809420431316, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90016073
+      value: 0.9001608
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192646, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -26859,7 +26859,7 @@ PrefabInstance:
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.42519274
+      value: 0.42519268
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
@@ -26869,12 +26869,12 @@ PrefabInstance:
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.040342182
+      value: -0.040342174
       objectReference: {fileID: 0}
     - target: {fileID: 4827625809717192647, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90016073
+      value: 0.9001608
       objectReference: {fileID: 0}
     - target: {fileID: 4993799011345860844, guid: a1742f1d6308e8c43887ddac0195bc87,
         type: 3}

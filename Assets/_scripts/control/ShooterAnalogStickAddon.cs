@@ -56,7 +56,7 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
         {
             Debug.Log("fire loop active , " + onShootEvent != null);
             yield return gunShotWaiter;
-            
+
             FireGun();
             onShootEvent?.Invoke();
         }
@@ -86,6 +86,14 @@ public class ShooterAnalogStickAddon : MonoBehaviour, IGunner
     }
     private void FireGun()
     {
-        equipedGun.Fire();
+
+        Debug.DrawRay(transform.position, simulatedInputVec, Color.red);
+
+        if (!Physics.Raycast(transform.position, simulatedInputVec, simulatedInputVec.magnitude))
+        {
+            equipedGun.Fire();
+        }
+        else
+            Debug.Log("Pared en el medio del tiro proyectado");
     }
 }
