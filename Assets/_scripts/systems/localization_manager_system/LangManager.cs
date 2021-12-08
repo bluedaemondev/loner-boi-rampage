@@ -50,7 +50,10 @@ public class LangManager : MonoBehaviour
     {
         EventManager.SubscribeToEvent(Constants.ON_LOAD_PREFS, LoadPreexistingData);
     }
-
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    LoadPreexistingData(PlayerPrefsManager.Instance.prefUser);
+    //}
     private void LoadPreexistingData(params object[] data)
     {
 
@@ -58,7 +61,8 @@ public class LangManager : MonoBehaviour
         selectedLanguage = ((Prefs)data[0]).language;
 
         Debug.Log(selectedLanguage.ToString());
-        //TranslateUpdate();
+        
+        onUpdate();
     }
 
     /// <summary>
@@ -102,6 +106,6 @@ public class LangManager : MonoBehaviour
         languageManager = LanguageU.LoadCodexFromString("www", www.downloadHandler.text);
 
         //if (selectedLanguage != PlayerPrefsManager.Instance.prefUser.language)
-            onUpdate();
+       onUpdate();
     }
 }

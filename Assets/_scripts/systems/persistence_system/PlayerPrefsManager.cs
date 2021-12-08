@@ -42,6 +42,11 @@ public class PlayerPrefsManager : MonoBehaviour
 
         StartCoroutine(GetFileLoad());
     }
+    //private IEnumerator OnLevelWasLoaded(int level)
+    //{
+        
+    //}
+
     private IEnumerator GetFileLoad()
     {
         yield return StartCoroutine(LoadPrefsFile<Prefs>());
@@ -88,11 +93,10 @@ public class PlayerPrefsManager : MonoBehaviour
 
             _sReader.Dispose();
 
-            Debug.Log(fileEnum);
+            //Debug.Log(fileEnum);
 
             this.prefUser = JsonUtility.FromJson<Prefs>(fileEnum);
-            // hecho con alambre hasta que agregue las config
-
+            
         }
         catch (System.Exception exe)
         {

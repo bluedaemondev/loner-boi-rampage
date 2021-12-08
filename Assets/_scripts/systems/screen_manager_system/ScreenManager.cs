@@ -60,7 +60,7 @@ public class ScreenManager : MonoBehaviour
         Debug.Log("Pushing " + resource);
 
         var go = Instantiate(Resources.Load<GameObject>(resource));
-        Debug.Log(go.activeSelf);
+        //Debug.Log(go.activeSelf);
         Push(go.GetComponent<IScreen>());
     }
   
