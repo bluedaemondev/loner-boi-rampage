@@ -10,12 +10,15 @@ public class UpdateLanguageButton : MonoBehaviour
     void Start()
     {
         _btn = GetComponent<Button>();
-        _btn.onClick.AddListener(LangManager.Instance.TranslateUpdate);
+        _btn.onClick.AddListener(LangChng);
     }
-
+    private void LangChng()
+    {
+        LangManager.Instance.TranslateUpdate();
+    }
     private void OnLevelWasLoaded(int level)
     {
-        if(!_btn)
+        if (!_btn)
             _btn = GetComponent<Button>();
 
     }

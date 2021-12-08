@@ -44,7 +44,8 @@ public class LangManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        StartCoroutine(DownloadCSV(externalURL)); //Bajamos el archivo de inet
+        if (languageManager == null || languageManager.Count == 0)
+            StartCoroutine(DownloadCSV(externalURL)); //Bajamos el archivo de inet
     }
     private void Start()
     {
@@ -61,22 +62,27 @@ public class LangManager : MonoBehaviour
         selectedLanguage = ((Prefs)data[0]).language;
 
         Debug.Log(selectedLanguage.ToString());
-        
-        onUpdate();
+
+        //onUpdate();
+        TranslateUpdate(false);
     }
 
     /// <summary>
     /// Editor method - change language
     /// </summary>
-    public void TranslateUpdate()
+    public void TranslateUpdate(bool cng = true)
     {
-        if (selectedLanguage == Language.eng)
-            selectedLanguage = Language.spa;
-        else
-            selectedLanguage = Language.eng;
+        if (cng)
+        {
+            if (selectedLanguage == Language.eng)
+                selectedLanguage = Language.spa;
+            else
+                selectedLanguage = Language.eng;
+            
+            PlayerPrefsManager.Instance.prefUser.language = selectedLanguage.Value;
+        }
 
         onUpdate();
-        PlayerPrefsManager.Instance.prefUser.language = selectedLanguage.Value;
         //Debug.Log("Update " + PlayerPrefsManager.Instance.prefUser.language);
 
 
@@ -106,6 +112,6 @@ public class LangManager : MonoBehaviour
         languageManager = LanguageU.LoadCodexFromString("www", www.downloadHandler.text);
 
         //if (selectedLanguage != PlayerPrefsManager.Instance.prefUser.language)
-       onUpdate();
+        onUpdate();
     }
 }

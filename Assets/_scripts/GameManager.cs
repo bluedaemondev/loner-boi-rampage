@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour, IScreen
             PlayerPrefsManager.Instance.prefUser = new Prefs();
         }
 
+        Debug.Log(TOTAL_VICTIMS);
+
         ScreenManager.Instance.Push(this);
     }
 
